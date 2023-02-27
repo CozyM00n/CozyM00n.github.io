@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="ds_0, CozyM00nの博客">
-    <meta name="description" content="字符串基本知识我们用字符数组储存字符串.C语言中的字符串必须以NULL结束，即&#39;\0&#39;.&#39;\0&#39;的ASCII码为0.C语言中所有字符操作函数都期望字符串以NULL结束.eg.
+    <meta name="description" content="字符串基本知识我们用字符数组储存字符串.C语言中的字符串必须以NUL结束，即&#39;\0&#39;.&#39;\0&#39;的ASCII码为0.C语言中所有字符操作函数都期望字符串以NUL结束.eg.
 char c[4];
 c[0] = &#39;J&#39;;
-c[1] = &#39;O">
+c[1] = &#39;O&#39;;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -368,21 +368,21 @@ c[1] = &#39;O">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-09
+                    2023-02-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    381
+                    782
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -405,7 +405,7 @@ c[1] = &#39;O">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="字符串基本知识"><a href="#字符串基本知识" class="headerlink" title="字符串基本知识"></a><strong>字符串基本知识</strong></h2><p>我们用字符数组储存字符串.C语言中的字符串必须以NULL结束，即<code>'\0'</code>.<code>'\0'</code>的ASCII码为0.C语言中所有字符操作函数都期望字符串以<code>NULL</code>结束.<br>eg.</p>
+                <h2 id="字符串基本知识"><a href="#字符串基本知识" class="headerlink" title="字符串基本知识"></a><strong>字符串基本知识</strong></h2><p>我们用字符数组储存字符串.C语言中的字符串必须以NUL结束，即<code>'\0'</code>.<code>'\0'</code>的ASCII码为0.C语言中所有字符操作函数都期望字符串以<code>NUL</code>结束.<br>eg.</p>
 <pre class="line-numbers language-C" data-language="C"><code class="language-C">char c[4];
 c[0] = 'J';
 c[1] = 'O';
@@ -418,6 +418,24 @@ printf("%s", c);<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <p>这会隐式地在内存的最后加上NULL字符.需要注意的是，这样<strong>声明和初始化</strong>一个字符数组时<font color="red"><strong>必须写在同一行</strong></font>，一行声明再一行赋值是非法的.<br>另外，在声明和初始化数组时，<code>char[]="string"</code>,方括号内的数字应 不填 或 ≥strlen+1.<br>2.按字符分别赋值</p>
 <pre class="line-numbers language-C" data-language="C"><code class="language-C">char c[20] = {'J', 'O', 'H', 'N','\0'};//NULL不再是隐式的<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>另外，c作为字符数组名，不可以执行被赋值<code>c = c1</code>或加法<code>c = c+1</code>操作.</p>
+<h2 id="指针和数组"><a href="#指针和数组" class="headerlink" title="指针和数组"></a>指针和数组</h2><pre class="line-numbers language-C" data-language="C"><code class="language-C">int A[5];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>*(A + i)</code>即<code>A[i]</code>,<code>(A + i)</code>即<code>&amp;A[i]</code>。</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">int B[2][3];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>B[0]</code>,<code>B[1]</code>是有3个整数的一维数组。<code>B</code>返回的是一个指向一维数组(包含3个整形元素)的指针。</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">int (*p)[3] = B;//定义一个指向一维数组的指针<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在内存中的显示：<br><a target="_blank" rel="noopener" href="https://imgse.com/i/ppCPvcT"><img src="https://s1.ax1x.com/2023/02/27/ppCPvcT.jpg" alt="ppCPvcT.jpg"></a></p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">printf ("%d", B);//400<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>B返回一个指向一维数组的指针，即&amp;B[0]</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">printf ("%d", *B);//400<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>即B[0],B[0]是一个一维数组的名字<br>B[0]会返回B[0]中第一个整数B[0][0]的指针，也即&amp;B[0][0]</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">printf ("%d", B + 1);//412<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>B返回一个指向一维数组的指针，+1后移动到下个一维数组<br>400 + 该一维数组的大小<code>(3*sizeof(int))</code>,也即&amp;B[1]</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">printf ("%d", *(B + 1));//412<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在解引用时，指针的类型很重要，B+1指向第二个一维数组<br>进行解引用，得到该一维数组（起始地址412）<br>即打印B[1]，使用一维数组B[1]的名字，返回指向B[1]的第一个元素B[1][0]的指针(return int*)，因此*(B+1)是指向地址为412的int元素的指针，即&amp;B[1][0]</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">printf("%d", *(B + 1) + 2);//420<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>*(B + 1)类型为int*，返回指向B[1]首元素的int型指针<br><code>*(B + 1) + 2</code> <code>B[1] + 2</code> <code>&amp;B[1][2]</code>相同</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">printf("%d", *(*B + 1));//3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>B是int(<em>)[3],指向第一个一维数组，*B就是B[0]<br>B[0]是int</em>，+1向前移动4bytes，*B + 1就是&amp;B[0][1],解引用得到B[0][1]。<br>对于二维数组，<code>B[i][j] = *(B[i] + j) = *(*(B + i) + j)</code></p>
 
                 
             </div>
@@ -695,7 +713,7 @@ printf("%s", c);<span aria-hidden="true" class="line-numbers-rows"><span></span>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">463</span>
+                        class="white-color">864</span>
             
             
             
