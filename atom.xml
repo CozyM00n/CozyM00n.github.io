@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CozyM00nの博客</title>
+  
+  <subtitle>CozyM00n&#39;s Blog</subtitle>
+  <link href="http://cozym00n.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://cozym00n.github.io/"/>
+  <updated>2024-03-09T01:37:50.368Z</updated>
+  <id>http://cozym00n.github.io/</id>
+  
+  <author>
+    <name>CozyM00n</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HelloBlog</title>
+    <link href="http://cozym00n.github.io/2023/02/04/helloblog/"/>
+    <id>http://cozym00n.github.io/2023/02/04/helloblog/</id>
+    <published>2023-02-04T03:31:34.000Z</published>
+    <updated>2024-03-09T01:37:50.368Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h2&gt;&lt;h2 id=&quot;概况&quot;&gt;&lt;a href=&quot;#概况&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="try" scheme="http://cozym00n.github.io/tags/try/"/>
+    
+  </entry>
+  
+</feed>
