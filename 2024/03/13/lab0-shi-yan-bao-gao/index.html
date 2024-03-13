@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HelloBlog, CozyM00nの博客">
+    <meta name="keywords" content="OS_lab0, CozyM00nの博客">
     <meta name="description" content="BUAA_OS_lab0_report">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>HelloBlog | CozyM00nの博客</title>
+    <title>OS_lab0 | CozyM00nの博客</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2023/02/05/pS6JZJP.png">
     
 
@@ -331,7 +331,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HelloBlog</h1>
+                    <h1 class="description center-align post-title">OS_lab0</h1>
                 </div>
             </div>
         </div>
@@ -385,7 +385,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    977
+                    972
                 </div>
                 
 
@@ -434,7 +434,7 @@
 
 
 <h5 id="Thinking-0-4"><a href="#Thinking-0-4" class="headerlink" title="Thinking 0.4"></a>Thinking 0.4</h5><p>提交日志</p>
-<img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308170239411.png" alt="image-20240308170239411" style="float: left;zoom:40%;">
+<img src="https://s21.ax1x.com/2024/03/13/pFc1UQe.png" alt="Your Image" width="60%" align="left">
 
 
 
@@ -445,38 +445,31 @@
 <p>找到提交说明为 1 的哈希值，执行命令 <code>git reset --hard &lt;hash&gt;</code></p>
 <p><img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308171605167.png" alt="image-20240308171605167"></p>
 <p>现在已经回到了旧版本，为了再次回到新版本，执行 <code>git reset --hard &lt;hash&gt; </code> ，再执行 git log，发现与上面的提交日志相同</p>
-<h5 id="Thinking-0-5"><a href="#Thinking-0-5" class="headerlink" title="Thinking 0.5"></a>Thinking 0.5</h5><pre class="line-numbers language->>```是追加，```>```是覆盖" data-language=">>```是追加，```>```是覆盖"><code class="language->>```是追加，```>```是覆盖">
-![image-20240308173453711](C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308173453711.png)
-
-
-
-##### Thinking 0.6
-
-command （创建该test文件的命令序列）
-
-```bash
-touch test
-chmod +x test
-echo echo Shell Start... &gt; test
-echo echo set a = 1 &gt;&gt; test
-echo a=1 &gt;&gt; test
-echo echo set b = 2 &gt;&gt; test
-echo b=2 &gt;&gt; test
-echo echo set c = a+b &gt;&gt; test
-echo 'c=$[$a+$b]' &gt;&gt; test
-echo 'echo c = $c' &gt;&gt; test
-echo echo save c to ./file1 &gt;&gt; test
-echo 'echo $c&gt;file1' &gt;&gt; test
-echo echo save b to ./file2 &gt;&gt; test
-echo 'echo $b&gt;file2' &gt;&gt; test
-echo echo save a to ./file3 &gt;&gt; test
-echo 'echo $a&gt;file3' &gt;&gt; test
-echo echo save file1 file2 file3 to file4 &gt;&gt; test
-echo 'cat file1&gt;file4' &gt;&gt; test
-echo 'cat file2&gt;&gt;file4' &gt;&gt; test
-echo 'cat file3&gt;&gt;file4' &gt;&gt; test
-echo echo save file4 to ./result &gt;&gt; test
-echo 'cat file4&gt;&gt;result' &gt;&gt; test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="Thinking-0-5"><a href="#Thinking-0-5" class="headerlink" title="Thinking 0.5"></a>Thinking 0.5</h5><p>注意：&gt;&gt;是追加，&gt;是覆盖</p>
+<p><img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308173453711.png" alt="image-20240308173453711"></p>
+<h5 id="Thinking-0-6"><a href="#Thinking-0-6" class="headerlink" title="Thinking 0.6"></a>Thinking 0.6</h5><p>command （创建该test文件的命令序列）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">touch</span> <span class="token builtin class-name">test</span>
+<span class="token function">chmod</span> +x <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> Shell Start<span class="token punctuation">..</span>. <span class="token operator">&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> <span class="token builtin class-name">set</span> a <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token number">1</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> <span class="token builtin class-name">set</span> b <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token assign-left variable">b</span><span class="token operator">=</span><span class="token number">2</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> <span class="token builtin class-name">set</span> c <span class="token operator">=</span> a+b <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'c=$[$a+$b]'</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'echo c = $c'</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> save c to ./file1 <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'echo $c&gt;file1'</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> save b to ./file2 <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'echo $b&gt;file2'</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> save a to ./file3 <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'echo $a&gt;file3'</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> save file1 file2 file3 to file4 <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'cat file1&gt;file4'</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'cat file2&gt;&gt;file4'</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'cat file3&gt;&gt;file4'</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> save file4 to ./result <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'cat file4&gt;&gt;result'</span> <span class="token operator">&gt;&gt;</span> <span class="token builtin class-name">test</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>test</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> Shell Start<span class="token punctuation">..</span>.
@@ -605,9 +598,9 @@ echo 'cat file4&gt;&gt;result' &gt;&gt; test<span aria-hidden="true" class="line
                 <a href="/2024/03/13/lab0-shi-yan-bao-gao/">
                     <div class="card-image">
                         
-                        <img src="https://s21.ax1x.com/2024/03/13/pFc1ZGT.png" class="responsive-img" alt="HelloBlog">
+                        <img src="https://s21.ax1x.com/2024/03/13/pFc1ZGT.png" class="responsive-img" alt="OS_lab0">
                         
-                        <span class="card-title">HelloBlog</span>
+                        <span class="card-title">OS_lab0</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -821,7 +814,7 @@ echo 'cat file4&gt;&gt;result' &gt;&gt; test<span aria-hidden="true" class="line
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">989</span>
+                        class="white-color">984</span>
             
             
             
