@@ -385,14 +385,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    972
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -439,15 +439,20 @@
 
 
 <p>进行版本回退。执行命令 <code>git reset --hard HEAD^</code> 后</p>
-<img src="lab0%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/image-20240308171002802.png" style="zoom:60%;">
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~/learnGit(master)$ git reset --hard HEAD^
+HEAD 现在位于 21b5f83 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>再执行<code> git log</code>，发现只剩下message为1和2的提交</p>
+
+
+<p>再执行<code>git log</code>，发现只剩下message为1和2的提交</p>
 <p>找到提交说明为 1 的哈希值，执行命令 <code>git reset --hard &lt;hash&gt;</code></p>
-<p><img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308171605167.png" alt="image-20240308171605167"></p>
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~/learnGit(master)$ git reset --hard ba88651a99d7bg1088240897+6f66796561430
+HEAD 现在位于 ba88651 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>现在已经回到了旧版本，为了再次回到新版本，执行 <code>git reset --hard &lt;hash&gt; </code> ，再执行 git log，发现与上面的提交日志相同</p>
 <h5 id="Thinking-0-5"><a href="#Thinking-0-5" class="headerlink" title="Thinking 0.5"></a>Thinking 0.5</h5><p>注意：&gt;&gt;是追加，&gt;是覆盖</p>
-<p><img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308173453711.png" alt="image-20240308173453711"></p>
-<h5 id="Thinking-0-6"><a href="#Thinking-0-6" class="headerlink" title="Thinking 0.6"></a>Thinking 0.6</h5><p>command （创建该test文件的命令序列）</p>
+<p><img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308173453711.png" alt=">和>>"></p>
+<h5 id="Thinking-0-6"><a href="#Thinking-0-6" class="headerlink" title="Thinking 0.6"></a>Thinking 0.6</h5><p>command（创建该test文件的命令序列）</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">touch</span> <span class="token builtin class-name">test</span>
 <span class="token function">chmod</span> +x <span class="token builtin class-name">test</span>
 <span class="token builtin class-name">echo</span> <span class="token builtin class-name">echo</span> Shell Start<span class="token punctuation">..</span>. <span class="token operator">&gt;</span> <span class="token builtin class-name">test</span>
@@ -496,20 +501,30 @@
 
 
 <p> 控制台输出</p>
-<img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308194330327.png" alt="image-20240308194330327" style="float:left;zoom:50%;">
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~/learnGit(master)$ ./test
+Shell Start.set a=1set b=2
+set c= a+b
+c=3
+save c to ./file1
+save b to ./file2
+save a to ./file3
+save filel file2 file3 to file4
+save file4 to ./result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p>result 内容</p>
-<img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308194618477.png" alt="image-20240308194618477" style="float : left;zoom:47%;">
-
-
+<pre class="line-numbers language-none"><code class="language-none">3
+2
+1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
 
 
 <img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240310233959207.png" alt="image-20240310233959207" style="float : left;zoom:47%;">
+
+
 
 <p><code>echo 'c=$[$a+$b]'</code>  用单引号防止Shell解释变量。或用<code>\</code>转义：<code>echo "c=\$[\$a+\$b]"</code>，反正双引号不行。<code>echo 'echo c = $c' </code>同理。</p>
 <p>命令<code>echo echo $c &gt; file1</code>将字符串”echo $c”写入file1文件。</p>
@@ -524,11 +539,31 @@
 <span class="token assign-left variable">to</span><span class="token operator">=</span><span class="token variable">$3</span>
 <span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">"s/<span class="token variable">${from}</span>/<span class="token variable">${to}</span>/g"</span> <span class="token variable">$1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>这里必须是双引号，因为要解析里面的变量。</p>
-<h3 id="难点分析"><a href="#难点分析" class="headerlink" title="难点分析"></a>难点分析</h3><p>最初我对grep，sed，awk各自的功能不够了解导致不知道该使用哪种指令来处理文本。</p>
-<p>对单双引号和反引号的使用认识不够清晰；对git理解不够深入，需要勤加练习。</p>
+<p>这里必须是双引号，因为要解析里面的变量（变量在单引号中不会被展开）。</p>
+<h3 id="难点分析"><a href="#难点分析" class="headerlink" title="难点分析"></a>难点分析</h3><ul>
+<li><p>最初我对grep，sed，awk各自的功能不够了解导致不知道该使用哪种指令来处理文本。grep搜索匹配某个模式的行，sed对文本进行各种编辑操作，awk可以分割字段处理且可以执行更为复杂的操作。</p>
+</li>
+<li><p>单双引号和反引号的使用：</p>
+<p>单引号内所有字符都被当作普通字符对待，而双引号会解析变量和特殊字符（如<code>$</code>,<code>\</code>）</p>
+<p>反引号或 <code>$()</code> 进行命令替换。执行命令，并将命令的输出插入到命令行中。</p>
+</li>
+<li><p>对git理解不够深入，还需要勤加练习。shell语言中的各种括号语法也需要注意，感觉有很多细节还是与平时使用的高级语言有不小的差异。</p>
+</li>
+</ul>
 <h3 id="实验体会"><a href="#实验体会" class="headerlink" title="实验体会"></a>实验体会</h3><p>学习了一些基本的bash指令，vim编辑器的使用，Makefile的编写，git的基本操作等等，补充了一些编译链接和MIPS的相关知识。</p>
-<p>本次入门实验可以说是为以后的lab打好基础，但我感觉自己很多操作依然不够熟练，此后还是要争取花更多时间学习os（悲</p>
+<p>本次实验学习了很多工具的使用，东西比较杂，可以说是为以后的lab打好基础。然而我感觉自己很多操作依然不够熟练，此后还是要争取花更多时间学习os（悲</p>
+<h3 id="Lab0上机"><a href="#Lab0上机" class="headerlink" title="Lab0上机"></a>Lab0上机</h3><h4 id="exam"><a href="#exam" class="headerlink" title="exam"></a>exam</h4><p> <code>gcc -c</code> (只编译不链接，生成目标文件）默认情况下，目标文件命名为源文件的名称的扩展名（例如<code>.c</code>）替换为<code>.o</code>。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gcc <span class="token parameter variable">-c</span> *.c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="extra"><a href="#extra" class="headerlink" title="extra"></a>extra</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Your code here. (3/3)</span>
+<span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token keyword">while</span> <span class="token variable"><span class="token punctuation">((</span>$PID <span class="token operator">&gt;</span> $i<span class="token punctuation">))</span></span>
+<span class="token keyword">do</span>
+	<span class="token function">awk</span> <span class="token parameter variable">-v</span> <span class="token assign-left variable">input</span><span class="token operator">=</span><span class="token variable">$PID</span>  <span class="token string">'input==$2 {print $3}'</span> <span class="token string">"<span class="token variable">$FILE</span>"</span>
+	<span class="token assign-left variable">PID</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">awk</span> <span class="token parameter variable">-v</span> <span class="token assign-left variable">input</span><span class="token operator">=</span>$PID  <span class="token string">'input==$2 {print $3}'</span> <span class="token string">"<span class="token variable">$FILE</span>"</span><span class="token variable">`</span></span>
+<span class="token keyword">done</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我一开始的时候写错了input==$2写错了</p>
 
                 
             </div>
@@ -814,7 +849,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">984</span>
+                        class="white-color">1.3k</span>
             
             
             
