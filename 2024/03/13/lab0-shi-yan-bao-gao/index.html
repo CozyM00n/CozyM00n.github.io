@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="HelloBlog, CozyM00nの博客">
-    <meta name="description" content="这里是zxy的第一篇博客。">
+    <meta name="description" content="BUAA_OS_lab0_report">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -326,7 +326,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2023/08/14/pPMNbUH.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s21.ax1x.com/2024/03/13/pFc1ZGT.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -355,8 +355,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/try/">
-                                <span class="chip bg-color">try</span>
+                            <a href="/tags/OS/">
+                                <span class="chip bg-color">OS</span>
                             </a>
                         
                     </div>
@@ -371,28 +371,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-04
+                    2024-03-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-09
+                    2024-03-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12
+                    977
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -415,7 +415,127 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h2 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h2><p>whale梦拓是个好梦拓。</p>
+                <h3 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h3><h5 id="Thinking-0-1"><a href="#Thinking-0-1" class="headerlink" title="Thinking 0.1"></a>Thinking 0.1</h5><p>不一样。</p>
+<p>创建README.txt文件后（第一次执行add之前）状态为未跟踪（Untracked）。</p>
+<p>add+commit之后修改README.txt内容，状态为修改状态，存在未暂存的变更（Modified）。</p>
+<h5 id="Thinking-0-2"><a href="#Thinking-0-2" class="headerlink" title="Thinking 0.2"></a>Thinking 0.2</h5><p>思考一下箭头中的 add the file 、stage the file 和 commit 分别对应的是 Git 里的哪些命令呢？</p>
+<p>add the file: <code>git add</code></p>
+<p>stage the file: <code>git add</code></p>
+<p>commit the file:  <code>git commit</code></p>
+<h5 id="Thinking-0-3"><a href="#Thinking-0-3" class="headerlink" title="Thinking 0.3"></a>Thinking 0.3</h5><p>1.代码文件 print.c 被错误删除时，应当使用什么命令将其恢复？</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout print.c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>2.代码文件 print.c 被错误删除后，执行了 <code>git rm print.c </code>命令，此时应当 使用什么命令将其恢复？ </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> restore <span class="token parameter variable">--staged</span> print.c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>3.无关文件 hello.txt 已经被添加到暂存区时，如何在不删除此文件的前提下将其移出暂存区？</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> <span class="token parameter variable">--cached</span> hello.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h5 id="Thinking-0-4"><a href="#Thinking-0-4" class="headerlink" title="Thinking 0.4"></a>Thinking 0.4</h5><p>提交日志</p>
+<img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308170239411.png" alt="image-20240308170239411" style="float: left;zoom:40%;">
+
+
+
+<p>进行版本回退。执行命令 <code>git reset --hard HEAD^</code> 后</p>
+<img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308171002802.png" alt="image-20240308171002802" style="float:left;zoom:60%;">
+
+<p>再执行<code> git log</code>，发现只剩下message为1和2的提交</p>
+<p>找到提交说明为 1 的哈希值，执行命令 <code>git reset --hard &lt;hash&gt;</code></p>
+<p><img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308171605167.png" alt="image-20240308171605167"></p>
+<p>现在已经回到了旧版本，为了再次回到新版本，执行 <code>git reset --hard &lt;hash&gt; </code> ，再执行 git log，发现与上面的提交日志相同</p>
+<h5 id="Thinking-0-5"><a href="#Thinking-0-5" class="headerlink" title="Thinking 0.5"></a>Thinking 0.5</h5><pre class="line-numbers language->>```是追加，```>```是覆盖" data-language=">>```是追加，```>```是覆盖"><code class="language->>```是追加，```>```是覆盖">
+![image-20240308173453711](C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308173453711.png)
+
+
+
+##### Thinking 0.6
+
+command （创建该test文件的命令序列）
+
+```bash
+touch test
+chmod +x test
+echo echo Shell Start... &gt; test
+echo echo set a = 1 &gt;&gt; test
+echo a=1 &gt;&gt; test
+echo echo set b = 2 &gt;&gt; test
+echo b=2 &gt;&gt; test
+echo echo set c = a+b &gt;&gt; test
+echo 'c=$[$a+$b]' &gt;&gt; test
+echo 'echo c = $c' &gt;&gt; test
+echo echo save c to ./file1 &gt;&gt; test
+echo 'echo $c&gt;file1' &gt;&gt; test
+echo echo save b to ./file2 &gt;&gt; test
+echo 'echo $b&gt;file2' &gt;&gt; test
+echo echo save a to ./file3 &gt;&gt; test
+echo 'echo $a&gt;file3' &gt;&gt; test
+echo echo save file1 file2 file3 to file4 &gt;&gt; test
+echo 'cat file1&gt;file4' &gt;&gt; test
+echo 'cat file2&gt;&gt;file4' &gt;&gt; test
+echo 'cat file3&gt;&gt;file4' &gt;&gt; test
+echo echo save file4 to ./result &gt;&gt; test
+echo 'cat file4&gt;&gt;result' &gt;&gt; test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>test</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> Shell Start<span class="token punctuation">..</span>.
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">set</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">set</span> b <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token assign-left variable">b</span><span class="token operator">=</span><span class="token number">2</span>
+<span class="token builtin class-name">echo</span> <span class="token builtin class-name">set</span> c <span class="token operator">=</span> a+b
+<span class="token assign-left variable">c</span><span class="token operator">=</span>$<span class="token punctuation">[</span><span class="token variable">$a</span>+<span class="token variable">$b</span><span class="token punctuation">]</span>
+<span class="token builtin class-name">echo</span> c <span class="token operator">=</span> <span class="token variable">$c</span>
+<span class="token builtin class-name">echo</span> save c to ./file1
+<span class="token builtin class-name">echo</span> <span class="token variable">$c</span><span class="token operator">&gt;</span>file1
+<span class="token builtin class-name">echo</span> save b to ./file2
+<span class="token builtin class-name">echo</span> <span class="token variable">$b</span><span class="token operator">&gt;</span>file2
+<span class="token builtin class-name">echo</span> save a to ./file3
+<span class="token builtin class-name">echo</span> <span class="token variable">$a</span><span class="token operator">&gt;</span>file1
+<span class="token builtin class-name">echo</span> save file1 file2 file3 to file4
+<span class="token function">cat</span> file<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span>file4
+<span class="token function">cat</span> file<span class="token operator"><span class="token file-descriptor important">2</span>&gt;&gt;</span>file4
+<span class="token function">cat</span> file<span class="token operator"><span class="token file-descriptor important">3</span>&gt;&gt;</span>file4
+<span class="token builtin class-name">echo</span> save file4 to ./result
+<span class="token function">cat</span> file<span class="token operator"><span class="token file-descriptor important">4</span>&gt;&gt;</span>result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p> 控制台输出</p>
+<img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308194330327.png" alt="image-20240308194330327" style="float:left;zoom:50%;">
+
+
+
+<p>result 内容</p>
+<img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240308194618477.png" alt="image-20240308194618477" style="float : left;zoom:47%;">
+
+
+
+
+
+
+
+<img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240310233959207.png" alt="image-20240310233959207" style="float : left;zoom:47%;">
+
+<p><code>echo 'c=$[$a+$b]'</code>  用单引号防止Shell解释变量。或用<code>\</code>转义：<code>echo "c=\$[\$a+\$b]"</code>，反正双引号不行。<code>echo 'echo c = $c' </code>同理。</p>
+<p>命令<code>echo echo $c &gt; file1</code>将字符串”echo $c”写入file1文件。</p>
+<p>命令<code>echo `echo $c&gt; file1` </code> 反引号进行命令替换，被替换后本身不输出内容，故输出echo自带的换行。</p>
+<h5 id="Exercise-0-3"><a href="#Exercise-0-3" class="headerlink" title="Exercise 0.3"></a>Exercise 0.3</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">grep</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">$2</span>"</span> <span class="token variable">$1</span> <span class="token operator">|</span> <span class="token function">cut</span> -d: <span class="token parameter variable">-f1</span> <span class="token operator">&gt;</span> <span class="token variable">$3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>-f1</code> 表示提取每行的第1个字段</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">grep</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">$2</span>"</span> <span class="token variable">$1</span> <span class="token operator">|</span> <span class="token function">awk</span> -F: <span class="token string">'{print $1}'</span> <span class="token operator">&gt;</span> <span class="token variable">$3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>-F </code>选项用来指定用于分隔的字符，默认是空格。所以该命令的 $1 就是用“:”分隔 的第1项了。</p>
+<h5 id="Exercise-0-4"><a href="#Exercise-0-4" class="headerlink" title="Exercise 0.4"></a>Exercise 0.4</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">from</span><span class="token operator">=</span><span class="token variable">$2</span>
+<span class="token assign-left variable">to</span><span class="token operator">=</span><span class="token variable">$3</span>
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">"s/<span class="token variable">${from}</span>/<span class="token variable">${to}</span>/g"</span> <span class="token variable">$1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这里必须是双引号，因为要解析里面的变量。</p>
+<h3 id="难点分析"><a href="#难点分析" class="headerlink" title="难点分析"></a>难点分析</h3><p>最初我对grep，sed，awk各自的功能不够了解导致不知道该使用哪种指令来处理文本。</p>
+<p>对单双引号和反引号的使用认识不够清晰；对git理解不够深入，需要勤加练习。</p>
+<h3 id="实验体会"><a href="#实验体会" class="headerlink" title="实验体会"></a>实验体会</h3><p>学习了一些基本的bash指令，vim编辑器的使用，Makefile的编写，git的基本操作等等，补充了一些编译链接和MIPS的相关知识。</p>
+<p>本次入门实验可以说是为以后的lab打好基础，但我感觉自己很多操作依然不够熟练，此后还是要争取花更多时间学习os（悲</p>
 
                 
             </div>
@@ -430,8 +550,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/try/">
-                                    <span class="chip bg-color">try</span>
+                                <a href="/tags/OS/">
+                                    <span class="chip bg-color">OS</span>
                                 </a>
                             
                         </div>
@@ -477,9 +597,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/03/13/lab0-shi-yan-bao-gao/">
                     <div class="card-image">
@@ -496,9 +617,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -507,6 +628,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -522,7 +644,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2023/02/04/helloblog/">
@@ -551,7 +673,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

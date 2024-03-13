@@ -6,7 +6,7 @@
   <link href="http://cozym00n.github.io/atom.xml" rel="self"/>
   
   <link href="http://cozym00n.github.io/"/>
-  <updated>2024-03-09T01:37:50.368Z</updated>
+  <updated>2024-03-13T02:39:22.062Z</updated>
   <id>http://cozym00n.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HelloBlog</title>
+    <link href="http://cozym00n.github.io/2024/03/13/lab0-shi-yan-bao-gao/"/>
+    <id>http://cozym00n.github.io/2024/03/13/lab0-shi-yan-bao-gao/</id>
+    <published>2024-03-13T03:31:34.000Z</published>
+    <updated>2024-03-13T02:39:22.062Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;思考题&quot;&gt;&lt;a href=&quot;#思考题&quot; class=&quot;headerlink&quot; title=&quot;思考题&quot;&gt;&lt;/a&gt;思考题&lt;/h3&gt;&lt;h5 id=&quot;Thinking-0-1&quot;&gt;&lt;a href=&quot;#Thinking-0-1&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="OS" scheme="http://cozym00n.github.io/tags/OS/"/>
+    
+  </entry>
   
   <entry>
     <title>HelloBlog</title>
