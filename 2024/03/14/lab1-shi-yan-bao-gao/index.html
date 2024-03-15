@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CozyM00nの博客">
-    <meta name="description" content="CozyM00nの博客">
+    <meta name="keywords" content="OS_lab1, CozyM00nの博客">
+    <meta name="description" content="BUAA_OS_lab1_report">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,53 +17,12 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CozyM00nの博客</title>
+    <title>OS_lab1 | CozyM00nの博客</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2023/02/05/pS6JZJP.png">
     
 
 
-    <!-- index cover -->
-    <!-- <link rel="stylesheet preload" type="text/css" href="/css/indexcover.css"> -->
-    <style>
-        .carousel-control {
-            width: 45px;
-            height: 45px;
-            line-height: 55px;
-            border-radius: 45px;
-            background: transparent;
-            cursor: pointer;
-            z-index: 100;
-        }
-        
-        #prev-cover {
-            position: absolute;
-            top: 48%;
-            left: 8px;
-        }
-        
-        #next-cover {
-            position: absolute;
-            top: 48%;
-            right: 8px;;
-        }
-        
-        #prev-cover i {
-            margin-right: 3px;
-        }
-        
-        #next-cover i {
-            margin-left: 3px;
-        }
-        
-        .carousel-control:hover {
-            background-color: rgba(0, 0, 0, .4);
-        }
-        
-        .carousel-control i {
-            color: #fff;
-            font-size: 2.4rem;
-        }
-    </style>
+    <!-- bg-cover style     -->
 
 
 
@@ -84,6 +43,8 @@
 
 
 
+
+    
 
 
 
@@ -349,367 +310,519 @@
 </header>
 
     
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item  white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                CozyM00n&#39;s Blog
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <span id="hitokoto" style="font-size: 20px;"></span>
-
-<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
-document.getElementById('#hitokoto')innerHTML = fetch('https://v1.hitokoto.cn')
-    .then(function (res) {
-        return res.json();
-    })
-    .then(function (data) {
-        return ('『' + data.hitokoto + '』' + '<br /> <strong>'+ '——' + '「' + data.from + '」' + '</strong>');
-    })
-    .catch(function (err) {
-        console.error(err);
-    })
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
 </script>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "可以，可以，没问题",
-                            
-                                "人类的全部智慧就包含在这五个字里面",
-                            
-                                "等待和希望",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s21.ax1x.com/2024/03/14/pFgCFuF.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">OS_lab1</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    $('.bg-cover').css('background-image', 'url(https://s1.ax1x.com/2023/08/14/pPMNybF.jpg)');
-</script>
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/OS/">
+                                <span class="chip bg-color">OS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-03-14
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-03-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    954
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    4 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h5 id="Thinking-1-1"><a href="#Thinking-1-1" class="headerlink" title="Thinking 1.1"></a>Thinking 1.1</h5><p><strong>Q:</strong> 请阅读 附录中的编译链接详解，尝试分别使用实验环境中的原生x86工具链（gcc、ld、readelf、objdump 等）和 MIPS 交叉编译工具链（带有 mips-linux-gnu-前缀），重复其中的编译和解析过程，观察相应的结果，并解释其中向 objdump 传入的参数的含义。</p>
+<p>执行<code>gcc -E hello.c</code>只进行预处理不编译：</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">//...
+extern int printf (const char *__restrict __format, ...);
+//...
+# 3 "hello.c"
+int main() {
+    printf("Hello World!\n");
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
+<p><strong>A:</strong> 执行<code>gcc -c hello.c</code>只编译不链接，对生成hello.o执行反汇编：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">objdump <span class="token parameter variable">-DS</span> hello.o<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>部分输出：</p>
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~ $ objdump -DS hello.o
+
+hello.o：     文件格式 elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 &lt;main&gt;:
+   0:   f3 0f 1e fa             endbr64 
+   4:   55                      push   %rbp
+   5:   48 89 e5                mov    %rsp,%rbp
+   8:   48 8d 05 00 00 00 00    lea    0x0(%rip),%rax        # f &lt;main+0xf&gt;
+   f:   48 89 c7                mov    %rax,%rdi
+  12:   e8 00 00 00 00          call   17 &lt;main+0x17&gt;
+  17:   b8 00 00 00 00          mov    $0x0,%eax
+  1c:   5d                      pop    %rbp
+  1d:   c3                      ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对正常编译（加上链接）生产的可执行文件进行反汇编，部分输出如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~ $ objdump -DS hello
+
+hello：     文件格式 elf64-x86-64
+
+
+Disassembly of section .interp:
+.....
+0000000000001149 &lt;main&gt;:
+    1149:       f3 0f 1e fa             endbr64 
+    114d:       55                      push   %rbp
+    114e:       48 89 e5                mov    %rsp,%rbp
+    1151:       48 8d 05 ac 0e 00 00    lea    0xeac(%rip),%rax        # 2004 &lt;_IO_stdin_used+0x4&gt;
+    1158:       48 89 c7                mov    %rax,%rdi
+    115b:       e8 f0 fe ff ff          call   1050 &lt;puts@plt&gt;
+    1160:       b8 00 00 00 00          mov    $0x0,%eax
+    1165:       5d                      pop    %rbp
+    1166:       c3                      ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>如果直接用MIPS交叉编译工具链编译hello.c，其生成的可执行文件的目标架构应该是 MIPS，需使用使用适用于 MIPS 架构的 objdump 版本。</p>
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~ $ mips-linux-gnu-gcc hello.c
+git@22373537:~ $ objdump -DS
+
+a.out：     文件格式 elf32-big
+
+objdump: can't disassemble for architecture UNKNOWN!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~ $ mips-linux-gnu-objdump -DS
+
+a.out：     文件格式 elf32-tradbigmips
+
+
+Disassembly of section .interp:
+.....
+004006e0 &lt;main&gt;:
+  4006e0:       27bdffe0        addiu   sp,sp,-32
+  4006e4:       afbf001c        sw      ra,28(sp)
+  4006e8:       afbe0018        sw      s8,24(sp)
+  4006ec:       03a0f025        move    s8,sp
+  4006f0:       3c1c0042        lui     gp,0x42
+  4006f4:       279c9010        addiu   gp,gp,-28656
+  4006f8:       afbc0010        sw      gp,16(sp)
+  4006fc:       3c020040        lui     v0,0x40
+  400700:       24440830        addiu   a0,v0,2096
+  400704:       8f828030        lw      v0,-32720(gp)
+  400708:       0040c825        move    t9,v0
+  40070c:       0320f809        jalr    t9
+  400710:       00000000        nop
+  400714:       8fdc0010        lw      gp,16(s8)
+  400718:       00001025        move    v0,zero
+  40071c:       03c0e825        move    sp,s8
+  400720:       8fbf001c        lw      ra,28(sp)
+  400724:       8fbe0018        lw      s8,24(sp)
+  400728:       27bd0020        addiu   sp,sp,32
+  40072c:       03e00008        jr      ra
+  400730:       00000000        nop
+        ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>objdump</code>参数的意义：</p>
+<ul>
+<li><code>-D</code> 选项表示进行反汇编。它告诉 <code>objdump</code> 将目标文件的机器代码转换为汇编代码。</li>
+<li><code>-S</code> 选项表示 <code>objdump</code> 会在反汇编的过程中，将机器代码与源代码进行关联，并将C语言源代码行显示在反汇编结果中。</li>
+</ul>
+<h5 id="Thinking-1-2"><a href="#Thinking-1-2" class="headerlink" title="Thinking 1.2"></a>Thinking 1.2</h5><p><strong>Q:</strong> </p>
+<p>• 尝试使用我们编写的 <code>readelf</code>程序，解析之前在<code> target</code>目录下生成的内核 ELF 文件。 </p>
+<p>• 也许你会发现我们编写的<code>readelf </code>程序是不能解析<code>readelf</code>文件本身的，而我们刚才介绍的系统工具 <code>readelf</code> 则可以解析，这是为什么呢？（提示：尝试使用<code>readelf -h</code>，并阅读 <code>tools/readelf </code>目录下的 <code>Makefile</code>，观察 <code>readelf </code>与<code>hello</code>的不同）</p>
+<p><strong>A:</strong></p>
+<p>使用我们自己编写的<code>readelf</code>解析内核ELF文件的结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~/22373537/tools/readelf (lab1)$ ./readelf ~/22373537/target/mos 
+0:0x0
+1:0x80400000
+2:0x804016f0
+3:0x80401708
+4:0x80401720
+5:0x0
+6:0x0
+7:0x0
+8:0x0
+9:0x0
+10:0x0
+11:0x0
+12:0x0
+13:0x0
+14:0x0
+15:0x0
+16:0x0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>-h表示显示 ELF 文件的文件头信息（header）</p>
+<pre class="line-numbers language-none"><code class="language-none">-h --file-header       Display the ELF file header<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>readelf</code>可执行文件是32位格式的，而<code>readelf</code>是64位的</p>
+<img src="https://s21.ax1x.com/2024/03/15/pFgLs2Q.png" width="75%" align="left">
+
+
+
+<img src="https://s21.ax1x.com/2024/03/15/pFgLr8g.png" width="75%" align="left">
+
+<p><code>tools/readelf</code>目录下的Makefile文件：</p>
+<pre class="line-numbers language-makefile" data-language="makefile"><code class="language-makefile"><span class="token target symbol">readelf</span><span class="token punctuation">:</span> main.o readelf.o
+        <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> <span class="token variable">$^</span> -o <span class="token variable">$@</span>
+
+<span class="token target symbol">hello</span><span class="token punctuation">:</span> hello.c
+        <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> <span class="token variable">$^</span> -o <span class="token variable">$@</span> -m32 -static -g <span class="token comment"># m32选项生成32位可执行文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们自己编写的<code>readelf.c</code>文件内数据类型前缀均为<code>ELF32</code>，因此可以解析的32位的hello，却不能解析作为64位可执行文件的自己。</p>
+<h5 id="Thinking-1-2-1"><a href="#Thinking-1-2-1" class="headerlink" title="Thinking 1.2"></a>Thinking 1.2</h5><p><strong>Q:</strong> </p>
+<p><strong>A:</strong></p>
+<h5 id="Thinking-1-2-2"><a href="#Thinking-1-2-2" class="headerlink" title="Thinking 1.2"></a>Thinking 1.2</h5><p><strong>Q:</strong> </p>
+<p><strong>A:</strong></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/OS/">
+                                    <span class="chip bg-color">OS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/03/14/lab1-shi-yan-bao-gao/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/03/14/pFgCFuF.jpg" class="responsive-img" alt="OS_lab1">
+                        
+                        <span class="card-title">OS_lab1</span>
+                    </div>
                 </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OS_lab1_report
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
 
                 
-                    <a href="https://github.com/CozyM00n/CozyM00n.github.io" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OS/">
+                        <span class="chip bg-color">OS</span>
                     </a>
+                    
+                </div>
                 
             </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/CozyM00n/CozyM00n.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:1292769829@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1292769829" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1292769829" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/03/13/lab0-shi-yan-bao-gao/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/03/13/pFc1ZGT.png" class="responsive-img" alt="OS_lab0">
+                        
+                        <span class="card-title">OS_lab0</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OS_lab0_report
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OS/">
+                        <span class="chip bg-color">OS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
 
 </div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
-
-    
 </div>
 
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
     });
 </script>
 
-
-
-<main class="content">
-
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            Dancing
-        </div>
-    </div>
-</div>
-
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/03/14/lab1-shi-yan-bao-gao/">
-                        <div class="card-image">
-                            
-                            <img src="https://s21.ax1x.com/2024/03/14/pFgCFuF.jpg" class="responsive-img" alt="OS_lab1">
-                            
-                            <span class="card-title">OS_lab1</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                BUAA_OS_lab1_report
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                zxy
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/OS/">
-                            <span class="chip bg-color">OS</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/03/13/lab0-shi-yan-bao-gao/">
-                        <div class="card-image">
-                            
-                            <img src="https://s21.ax1x.com/2024/03/13/pFc1ZGT.png" class="responsive-img" alt="OS_lab0">
-                            
-                            <span class="card-title">OS_lab0</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                BUAA_OS_lab0_report
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                zxy
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/OS/">
-                            <span class="chip bg-color">OS</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/02/04/helloblog/">
-                        <div class="card-image">
-                            
-                            <img src="https://s1.ax1x.com/2023/08/14/pPMNbUH.jpg" class="responsive-img" alt="HelloBlog">
-                            
-                            <span class="card-title">HelloBlog</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                这里是zxy的第一篇博客。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                zxy
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/try/">
-                            <span class="chip bg-color">try</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-        </div>
-    </article>
 
 </main>
 
