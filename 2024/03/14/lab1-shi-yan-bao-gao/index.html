@@ -378,21 +378,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-15
+                    2024-03-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    954
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -415,8 +415,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="Thinking-1-1"><a href="#Thinking-1-1" class="headerlink" title="Thinking 1.1"></a>Thinking 1.1</h5><p><strong>Q:</strong> 请阅读 附录中的编译链接详解，尝试分别使用实验环境中的原生x86工具链（gcc、ld、readelf、objdump 等）和 MIPS 交叉编译工具链（带有 mips-linux-gnu-前缀），重复其中的编译和解析过程，观察相应的结果，并解释其中向 objdump 传入的参数的含义。</p>
-<p>执行<code>gcc -E hello.c</code>只进行预处理不编译：</p>
+                <h3 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h3><h5 id="Thinking-1-1"><a href="#Thinking-1-1" class="headerlink" title="Thinking 1.1"></a>Thinking 1.1</h5><p><strong>Q:</strong> 请阅读 附录中的编译链接详解，尝试分别使用实验环境中的原生x86工具链（gcc、ld、readelf、objdump 等）和 MIPS 交叉编译工具链（带有 mips-linux-gnu-前缀），重复其中的编译和解析过程，观察相应的结果，并解释其中向 objdump 传入的参数的含义。</p>
+<p><strong>A:</strong> 执行<code>gcc -E hello.c</code>只进行预处理不编译：</p>
 <pre class="line-numbers language-C" data-language="C"><code class="language-C">//...
 extern int printf (const char *__restrict __format, ...);
 //...
@@ -428,7 +428,7 @@ int main() {
 
 
 
-<p><strong>A:</strong> 执行<code>gcc -c hello.c</code>只编译不链接，对生成hello.o执行反汇编：</p>
+<p>执行<code>gcc -c hello.c</code>只编译不链接，对生成hello.o执行反汇编：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">objdump <span class="token parameter variable">-DS</span> hello.o<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>部分输出：</p>
@@ -471,21 +471,21 @@ Disassembly of section .interp:
 
 
 
-<p>如果直接用MIPS交叉编译工具链编译hello.c，其生成的可执行文件的目标架构应该是 MIPS，需使用使用适用于 MIPS 架构的 objdump 版本。</p>
-<pre class="line-numbers language-none"><code class="language-none">git@22373537:~ $ mips-linux-gnu-gcc hello.c
+<p>如果直接用MIPS交叉编译工具链编译<code>hello.c</code>，其生成的可执行文件的目标架构应该是 MIPS，需使用适用于 MIPS 架构的 objdump 版本。</p>
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~ $ mips-linux-gnu-gcc hello.c -o hello
 git@22373537:~ $ objdump -DS
 
-a.out：     文件格式 elf32-big
+hello：     文件格式 elf32-big
 
 objdump: can't disassemble for architecture UNKNOWN!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">git@22373537:~ $ mips-linux-gnu-objdump -DS
+<pre class="line-numbers language-none"><code class="language-none">git@22373537:~ $ mips-linux-gnu-objdump -DS hello
 
-a.out：     文件格式 elf32-tradbigmips
+hello：     文件格式 elf32-tradbigmips
 
 
 Disassembly of section .interp:
-.....
+......
 004006e0 &lt;main&gt;:
   4006e0:       27bdffe0        addiu   sp,sp,-32
   4006e4:       afbf001c        sw      ra,28(sp)
@@ -508,7 +508,7 @@ Disassembly of section .interp:
   400728:       27bd0020        addiu   sp,sp,32
   40072c:       03e00008        jr      ra
   400730:       00000000        nop
-        ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  ......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><code>objdump</code>参数的意义：</p>
 <ul>
@@ -542,7 +542,7 @@ Disassembly of section .interp:
 <p>-h表示显示 ELF 文件的文件头信息（header）</p>
 <pre class="line-numbers language-none"><code class="language-none">-h --file-header       Display the ELF file header<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><code>readelf</code>可执行文件是32位格式的，而<code>readelf</code>是64位的</p>
+<p><code>readelf</code>可执行文件是64位格式的，而<code>hello</code>是32位的</p>
 <img src="https://s21.ax1x.com/2024/03/15/pFgLs2Q.png" width="75%">
 
 
@@ -556,11 +556,21 @@ Disassembly of section .interp:
 <span class="token target symbol">hello</span><span class="token punctuation">:</span> hello.c
         <span class="token variable">$</span><span class="token punctuation">(</span>CC<span class="token punctuation">)</span> <span class="token variable">$^</span> -o <span class="token variable">$@</span> -m32 -static -g <span class="token comment"># m32选项生成32位可执行文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>我们自己编写的<code>readelf.c</code>文件内数据类型前缀均为<code>ELF32</code>，因此可以解析的32位的hello，却不能解析作为64位可执行文件的自己。</p>
-<h5 id="Thinking-1-2-1"><a href="#Thinking-1-2-1" class="headerlink" title="Thinking 1.2"></a>Thinking 1.2</h5><p><strong>Q:</strong> </p>
-<p><strong>A:</strong></p>
-<h5 id="Thinking-1-2-2"><a href="#Thinking-1-2-2" class="headerlink" title="Thinking 1.2"></a>Thinking 1.2</h5><p><strong>Q:</strong> </p>
-<p><strong>A:</strong></p>
+<p>我们自己编写的<code>readelf.c</code>文件内数据类型前缀均为<code>ELF32</code>，因此可以解析的是32位的hello，却不能解析作为64位elf的自己。</p>
+<h5 id="Thinking-1-3"><a href="#Thinking-1-3" class="headerlink" title="Thinking 1.3"></a>Thinking 1.3</h5><p><strong>Q:</strong> 在理论课上我们了解到，MIPS 体系结构上电时，启动入口地址为 <code>0xBFC00000</code>（其实启动入口地址是根据具体型号而定的，由硬件逻辑确定，也有可能不是这个地址，但 一定是一个确定的地址），但实验操作系统的内核入口并没有放在上电启动地址，而是按照内存布局图放置。思考为什么这样放置内核还能保证内核入口被正确跳转到？（提示：思考实验中启动过程的两阶段分别由谁执行。）</p>
+<p><strong>A:</strong> 启动的第一阶段：硬件初始化，硬件会根据启动入口地址开始执行引导程序（Bootloader）</p>
+<p>第二阶段是内核执行阶段，引导程序会将控制权转移给内核，内核开始执行。内核的入口地址由引导程序指定的加载位置决定。</p>
+<h3 id="难点分析"><a href="#难点分析" class="headerlink" title="难点分析"></a>难点分析</h3><p>我认为本次实验较难的部分主要是ELF文件的解析，还有就是补全<code>prinfk</code>要看懂每一部分在做什么，此外每个目录下的<code>Makefile</code>文件也值得认真琢磨。</p>
+<p>本次lab1课下实验首先介绍了ELF文件的结构，包括：</p>
+<p>1.<strong>ELF头（ELF Header）</strong>，即结构体<code>Elf32_Ehdr</code>，存放ELF文件信息</p>
+<p>2.<strong>程序头表（Program Header Table）</strong>，含有段头表项（Segment Header），即结构体<code>Elf32_Phdr</code>作为段头表中的每个条目来存储</p>
+<p>3.<strong>节头表（Section Header Table）</strong>，含有节头表项（Section Header），即结构体<code>Elf32_Shdr</code>作为节头表中的每个条目来存储</p>
+<p>3.<strong>段（Segment）：</strong>包含多个节</p>
+<p>4.<strong>节（Section）：</strong> 常见的节： <code>.text</code>（代码段）、<code>.data</code>（数据段）、<code>.bss</code>（未初始化的数据段）</p>
+<p>通过编译链接我们用C语言写的readelf.c生成readelf这个可执行文件，后者可以对32位ELF格式的文件进行简单的解析。</p>
+<p>介绍了内核在MIPS内存布局以及内核所处的位置；</p>
+<p>介绍了<code>kernel.lds</code> 文件（一个链接脚本Linker Script）定义了目标文件在内存中的布局和排列方式及程序入口；</p>
+<h3 id="实验体会"><a href="#实验体会" class="headerlink" title="实验体会"></a>实验体会</h3><p>本次实验我在理解指导书内容以及实验代码上花费了大量时间，需要在众多目录和文件中找到并理解彼此的关系。首先，自己对Makefile的变量定义等不够熟悉，查阅资料后才大致理解每一层的Make在干什么。</p>
 
                 
             </div>
@@ -727,8 +737,6 @@ Disassembly of section .interp:
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -846,7 +854,7 @@ Disassembly of section .interp:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.3k</span>
+                        class="white-color">2.9k</span>
             
             
             
