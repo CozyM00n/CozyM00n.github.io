@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HelloBlog, CozyM00nの博客">
-    <meta name="description" content="这里是zxy的第一篇博客。">
+    <meta name="keywords" content="OO_Unit1, CozyM00nの博客">
+    <meta name="description" content="BUAA_OO_Unit1_summary">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>HelloBlog | CozyM00nの博客</title>
+    <title>OO_Unit1 | CozyM00nの博客</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2023/02/05/pS6JZJP.png">
     
 
@@ -326,12 +326,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2023/08/14/pPMNbUH.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s21.ax1x.com/2024/03/20/pFWUSUO.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HelloBlog</h1>
+                    <h1 class="description center-align post-title">OO_Unit1</h1>
                 </div>
             </div>
         </div>
@@ -355,8 +355,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/try/">
-                                <span class="chip bg-color">try</span>
+                            <a href="/tags/OO/">
+                                <span class="chip bg-color">OO</span>
                             </a>
                         
                     </div>
@@ -371,28 +371,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-04
+                    2024-03-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-09
+                    2024-03-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -415,7 +415,64 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h2 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h2><p>whale梦拓是个好梦拓。</p>
+                <h1 id="OO-Unit1-表达式化简"><a href="#OO-Unit1-表达式化简" class="headerlink" title="OO_Unit1: 表达式化简"></a>OO_Unit1: 表达式化简</h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本单元OO作业主题是对给定表达式化简，第一次作业要求将含有一个<code>x</code>变量的表达式的所有括号展开，迭代的两次分别是增加指数函数，自定义函数和求导的功能。</p>
+<p>解析输入的符合课程组给定文法的表达式，对表达式的结构进行解析后进行化简，我使用了递归下降的方法对表达式解析。事实上关于表达式的解析和化简都是基于逐层递归的思想进行的——首先，表达式的解析是从上到下进行解析，核心是<code>parseExpr-&gt;parseTerm-&gt;parseFac</code>，从而建起有这三个层次的表达式树；然后再进行表达式的化简计算，这一步就是从下往上计算，计算结果可以用<code>Ploy</code>存储，每一步计算返回一个<code>Poly</code>，首先计算合并用<code>*</code>连接的<code>Factors</code>，再合并用<code>+/-</code>连接的<code>Terms</code>，最终得到了<code>Poly</code>进行输出就可以了。</p>
+<p>我在完成本单元三次作业时的困难程度是递减的，第一次作业其实任务量不算大，但自己由于对递归下降思想完全没有概念，光是理解并思考完架构就已经周四了……第二次作业增加了两大模块分别是<code>exp</code>因子和自定义函数，再加上由于我第一次作业的架构并没有很完善需要部分重构，工作量也蛮大的；至于第三次作业只有一个求导算子，在理解递归下降的思想的基础上很快就可以做完。</p>
+<p>下面是我对三次作业的分析和总结。</p>
+<h3 id="homework1"><a href="#homework1" class="headerlink" title="homework1"></a>homework1</h3><p>第一次作业的任务是展开一个单变量多项式，输出拆好括号并化简的表达式。</p>
+<h4 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h4><h5 id="1-表达式的解析"><a href="#1-表达式的解析" class="headerlink" title="1.表达式的解析"></a><strong>1.表达式的解析</strong></h5><p>解析工作由词法分析器<code>Lexer</code>和解析器<code>Parser</code>构成。Lexer负责将表达式解析为数字/符号<code>+-*^()</code>/字母<code>x</code>等基本元素(token)，为Parser的解析工作提供了next()函数来获取每一个元素。</p>
+<p>接下来就是<code>parser</code>进行解析，最终的返回的是一个<code>Expr</code>。</p>
+<p>我的Expr类中包含了只储存了一个Expr和一个Term，以及连接两者的符合op，在解析时以expr -&gt; expr + term形式建立表达式树。这里有一些细节需要注意：</p>
+<ul>
+<li>由于计算表达式是从左往右计算的，因此不能将表达式解析为expr -&gt;term+ expr的形式，否则会违反运算顺序。例如在计算1-1+1时若按上述方法解析就会变成1-(1+1)。</li>
+<li>但如果按照exp -&gt; exp + term解析，就需要在调用parseExp()函数内直接再调用parseExp()，从而陷入无限递归，解决方法是先调用parseTerm解析出Term1，将其向上转换为Expr。如果其后还有+/-，则继续调用parseTerm解析出Term2，更新要返回的Expr=Expr+Term2；如果没有+/-，即为递归边界，直接返回Expr(Term1)。</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Expr</span> <span class="token function">parseExpr</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Term</span> term1 <span class="token operator">=</span> <span class="token function">parseTerm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Exp</span> expr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Expr</span><span class="token punctuation">(</span>term1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//向上转化为Expr，结构为Expr-&gt;Term</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>lexer<span class="token punctuation">.</span><span class="token function">peak</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"+"</span><span class="token punctuation">)</span> <span class="token operator">|</span> lexer<span class="token punctuation">.</span><span class="token function">peak</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">String</span> op <span class="token operator">=</span> lexer<span class="token punctuation">.</span><span class="token function">peak</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            lexer<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Term</span> term2 <span class="token operator">=</span> <span class="token function">parseTerm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            expr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Expr</span><span class="token punctuation">(</span>expr<span class="token punctuation">,</span> term2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//expr -&gt; expr + term</span>
+            expr<span class="token punctuation">.</span><span class="token function">setOp</span><span class="token punctuation">(</span>op<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> expr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>Term的解析思路同上，我以<code>Term -&gt; Factor * Term</code>对<code>Term</code>进行解析。由于乘法计算无需考虑从左到右的顺序，先解析Factor是没问题的。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Term</span> <span class="token function">parseTerm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Term</span> term <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Term</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        term<span class="token punctuation">.</span><span class="token function">setFactor</span><span class="token punctuation">(</span><span class="token function">parseFactor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>lexer<span class="token punctuation">.</span><span class="token function">peak</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            lexer<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            term<span class="token punctuation">.</span><span class="token function">setTerm</span><span class="token punctuation">(</span><span class="token function">parseTerm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> term<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这样解析表达式后建立的树是一个类似于二叉树的结构。</p>
+<img src="https://s21.ax1x.com/2024/03/20/pFW4dYQ.jpg" alt="git log" width="50%">
+
+<p>关于符号的处理，我在expr -&gt; expr + term这一步记录了符号，此外在每种Factor都添加了sign属性。事实上后者是没有必要的，由于只有<strong>在第一个因子/项之前，可以带一个正号或者负号</strong>，而预处理时我会将积压在每个项前连续的+-号处理掉，所以得到的表达式只需在以下两个位置加入符号判断：1.Factor乘积构成的Term前判断加减 2.至于因子前的符号，根据文法只需在NumFac前判断该数字的正负。</p>
+<h5 id="2-表达式的化简"><a href="#2-表达式的化简" class="headerlink" title="2.表达式的化简"></a>2.表达式的化简</h5><p>化简是在解析建好的表达式树从底层逐层向上化简。</p>
+<p>引入Mono类，里面只有一个exponent记录x的指数。</p>
+<p>这一步封装我做的不好，当时的我写到这一步已经是周五了，没有引入Poly。我在<code>Expr</code>、<code>Term</code>和各种<code>Factor</code>类中都写了<code>simplify()</code>方法直接返回一个<code>HashMap&lt;BigInteger,Mono&gt;</code>（也就是之后的toPoly），从Factor开始向上化简，最终在main中调用expr.simplify()即可获得最终化简好的HashMap。</p>
+<h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><h4 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h4><h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><img src="https://s21.ax1x.com/2024/03/20/pFWosOI.png" alt="git log" width="80%">
+
+<ul>
+<li><p>由于我的Mono类之间的计算分散到了各个类中而没有封装好，很必然地导致我在ExprFac中计算表达式乘方时代码复杂度很高而且重复代码多。在之后的作业中进行了解耦和封装。</p>
+</li>
+<li><p>此外在parseFactor中包含解析各种因子的判断，难免地复杂度偏高。</p>
+</li>
+</ul>
+<h4 id="Bug分析"><a href="#Bug分析" class="headerlink" title="Bug分析"></a>Bug分析</h4><p>第一次作业我在预处理时加上了无比智慧的一个去除前导零的操作，事实上不仅BigInteger会自动处理前导零因此是完全多余的，而且我还把这个函数写错了，得到的数字只要有0就会被我删去一部分。这应该是一个比较严重的错误了，让我没想到的是强测居然只挂了一个点，真是对这个无比致命的错误来说非常的友好了orzz 于是我也在第一次oo作业就获得极致的互相hack经历。感觉房友的错误覆盖率也十分的广，我用一些随机生成的数据便收获了约30%的命中率，甚至最后不知道自己在砍谁（bushi。</p>
+<p>修复bug就是把我那几行预处理删掉，至今有时想到这个错误还是不知道自己当时是怎么想的。。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>在优化方面则我一直能摆则摆，每次做完作业就都剩下TODO，甚至将正项提前这一基本的优化我也是第二次才做，总之还是不够勤快。。</li>
+</ul>
 
                 
             </div>
@@ -430,8 +487,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/try/">
-                                    <span class="chip bg-color">try</span>
+                                <a href="/tags/OO/">
+                                    <span class="chip bg-color">OO</span>
                                 </a>
                             
                         </div>
@@ -477,71 +534,28 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/03/13/lab0-shi-yan-bao-gao/">
+                <a href="/2024/03/20/oo-unit1/">
                     <div class="card-image">
                         
-                        <img src="https://s21.ax1x.com/2024/03/13/pFc1ZGT.png" class="responsive-img" alt="OS_lab0">
+                        <img src="https://s21.ax1x.com/2024/03/20/pFWUSUO.jpg" class="responsive-img" alt="OO_Unit1">
                         
-                        <span class="card-title">OS_lab0</span>
+                        <span class="card-title">OO_Unit1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            BUAA_OS_lab0_report
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            zxy
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/OS/">
-                        <span class="chip bg-color">OS</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/02/04/helloblog/">
-                    <div class="card-image">
-                        
-                        <img src="https://s1.ax1x.com/2023/08/14/pPMNbUH.jpg" class="responsive-img" alt="HelloBlog">
-                        
-                        <span class="card-title">HelloBlog</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            这里是zxy的第一篇博客。
+                            BUAA_OO_Unit1_summary
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-20
                             </span>
                         <span class="publish-author">
                             
@@ -555,8 +569,52 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/try/">
-                        <span class="chip bg-color">try</span>
+                    <a href="/tags/OO/">
+                        <span class="chip bg-color">OO</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/03/14/lab1-shi-yan-bao-gao/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/03/15/pFgX7H1.jpg" class="responsive-img" alt="OS_lab1">
+                        
+                        <span class="card-title">OS_lab1</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OS_lab1_report
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OS/">
+                        <span class="chip bg-color">OS</span>
                     </a>
                     
                 </div>
