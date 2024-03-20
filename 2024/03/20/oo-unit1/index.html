@@ -454,13 +454,13 @@
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这样解析表达式后建立的树是一个类似于二叉树的结构。</p>
-<img src="https://s21.ax1x.com/2024/03/20/pFW4dYQ.jpg" alt="git log" width="50%">
+<img src="https://s21.ax1x.com/2024/03/20/pFWTjVP.jpg" alt="" width="50%">
 
 <p>关于符号的处理，我在expr -&gt; expr + term这一步记录了符号，此外在每种Factor都添加了sign属性。事实上后者是没有必要的，由于只有<strong>在第一个因子/项之前，可以带一个正号或者负号</strong>，而预处理时我会将积压在每个项前连续的+-号处理掉，所以得到的表达式只需在以下两个位置加入符号判断：1.Factor乘积构成的Term前判断加减 2.至于因子前的符号，根据文法只需在NumFac前判断该数字的正负。</p>
 <h5 id="2-表达式的化简"><a href="#2-表达式的化简" class="headerlink" title="2.表达式的化简"></a>2.表达式的化简</h5><p>化简是在解析建好的表达式树从底层逐层向上化简。</p>
 <p>引入Mono类，里面只有一个exponent记录x的指数。</p>
 <p>这一步封装我做的不好，当时的我写到这一步已经是周五了，没有引入Poly。我在<code>Expr</code>、<code>Term</code>和各种<code>Factor</code>类中都写了<code>simplify()</code>方法直接返回一个<code>HashMap&lt;BigInteger,Mono&gt;</code>（也就是之后的toPoly），从Factor开始向上化简，最终在main中调用expr.simplify()即可获得最终化简好的HashMap。</p>
-<h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><h4 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h4><h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><img src="https://s21.ax1x.com/2024/03/20/pFWosOI.png" alt="git log" width="80%">
+<h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><h4 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h4><h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><img src="https://s21.ax1x.com/2024/03/20/pFWosOI.png" alt="" width="80%">
 
 <ul>
 <li><p>由于我的Mono类之间的计算分散到了各个类中而没有封装好，很必然地导致我在ExprFac中计算表达式乘方时代码复杂度很高而且重复代码多。在之后的作业中进行了解耦和封装。</p>
