@@ -385,7 +385,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.4k
+                    4.3k
                 </div>
                 
 
@@ -416,8 +416,8 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="OO-Unit1-表达式化简"><a href="#OO-Unit1-表达式化简" class="headerlink" title="OO_Unit1: 表达式化简"></a>OO_Unit1: 表达式化简</h1><p>[TOC]</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本单元OO作业主题是对给定表达式化简，第一次作业要求将含有一个<code>x</code>变量的表达式的所有括号展开，迭代的两次分别是增加指数函数，自定义函数和求导的功能。</p>
-<p>解析输入的符合课程组给定文法的表达式，对表达式的结构进行解析后进行化简，我使用了递归下降的方法对表达式解析。事实上关于表达式的解析和化简都是基于逐层递归的思想进行的——首先，表达式的解析是从上到下进行解析，核心是<code>parseExpr-&gt;parseTerm-&gt;parseFac</code>，从而建起有这三个层次的表达式树；然后再进行表达式的化简计算，这一步就是从下往上计算，计算结果可以用<code>Ploy</code>存储，每一步计算返回一个<code>Poly</code>，首先计算合并用<code>*</code>连接的<code>Factors</code>，再合并用<code>+/-</code>连接的<code>Terms</code>，最终得到了<code>Poly</code>进行输出就可以了。</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本单元OO作业主题是对给定表达式化简，第一次作业要求将含有一个<code>x</code>变量的表达式的所有括号展开。</p>
+<p>解析输入的符合课程组给定文法的表达式，对表达式的结构进行解析后进行化简，我使用了递归下降的方法对表达式解析。事实上关于表达式的解析和化简都是基于逐层递归的思想进行的——首先，表达式的解析是从上到下进行解析，核心是<code>parseExpr-&gt;parseTerm-&gt;parseFac</code>，从而建起有这三个层次的表达式树；然后再进行表达式的化简计算，这一步就是从下往上计算，计算结果可以用<code>Ploy</code>存储，每一步计算返回一个<code>Poly</code>，首先计算合并用<code>*</code>连接的<code>Factor</code>，再合并用<code>+/-</code>连接的<code>Term</code>，最终得到了<code>Poly</code>进行输出就可以了。</p>
 <p>我在完成本单元三次作业时的困难程度是递减的，第一次作业由于对递归下降思想完全没有概念，光是理解并思考完架构就花了两天时间，第二次作业增加了两大模块分别是<code>exp</code>因子和自定义函数，再加上由于我第一次作业的架构并没有很完善需要部分重构，工作量也蛮大的；至于第三次作业只有一个求导算子，在理解递归下降的思想的基础上很快就可以做完。</p>
 <p>下面是我对三次作业的分析和总结。</p>
 <h3 id="homework1"><a href="#homework1" class="headerlink" title="homework1"></a>homework1</h3><p>第一次作业的任务是展开一个单变量多项式，输出拆好括号并化简的表达式。</p>
@@ -520,8 +520,8 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>作为<code>Factor</code>转化为<code>Poly</code>时，直接将指数<code>a</code>乘进<code>factor</code>。</p>
-<h5 id="关于合并同类项"><a href="#关于合并同类项" class="headerlink" title="关于合并同类项"></a>关于合并同类项</h5><p>在计算的过程中<code>Poly</code>类中有一个<code>addMono</code>的方法，我直接遍历该<code>poly</code>的<code>MonoList</code>是否含有待加入<code>mono</code>的同类项，也就是需要重写<code>mono</code>的<code>equals</code>方法。<br>$$<br>mono = Coe * x^{a} * exp (Poly)<br>$$</p>
-<p>$$<br>Poly=\sum_{}^{}mono<br>$$</p>
+<h5 id="关于合并同类项"><a href="#关于合并同类项" class="headerlink" title="关于合并同类项"></a>关于合并同类项</h5><p>在计算的过程中<code>Poly</code>类中有一个<code>addMono</code>的方法，我直接遍历该<code>poly</code>的<code>MonoList</code>是否含有待加入<code>mono</code>的同类项，也就是需要重写<code>mono</code>的<code>equals</code>方法。<br>$$<br>Mono = Coe * x^{a} * exp (Poly)<br>$$</p>
+<p>$$<br>Poly=\sum_{}^{}Mono<br>$$</p>
 <p>要想判断两个<code>mono</code>是否可以合并，只需要比较<code>x</code>的指数<code>a</code>以及<code>e</code>指数上的<code>Poly</code>，这两者均相等就可以合并。作为<code>BigInteger</code>的<code>a</code>直接比较即可，而<code>Poly</code>的相等则需要我们再写相应的<code>equals</code>方法。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Mono.java</span>
 <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">myEqual</span><span class="token punctuation">(</span><span class="token class-name">Mono</span> mono<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -593,11 +593,12 @@
     <span class="token keyword">return</span> expr<span class="token punctuation">.</span><span class="token function">toDiffPoly</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toDiffPoly</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>所以还要对<code>Mono</code>和<code>Poly</code>的求导，求导的过程也很直观。这里只要注意一下指数为0的时候返回<code>0</code>就可以了。<br>$$<br>mono’ = (Coe<em>a) * x^{a-1} * exp (Poly)+Coe</em>x*exp(Poly)*Poly’<br>$$</p>
+<p>所以还要对<code>Mono</code>和<code>Poly</code>的求导，求导的过程也很直观。这里只要注意一下指数为0的时候返回<code>0</code>就可以了。</p>
+<p>$$<br>Mono’ = (Coe*a) * x^{a-1} * exp (Poly)+Coe<em>x</em>exp(Poly)*Poly’<br>$$</p>
 <p>$$<br>Poly’=\sum_{}^{}mono’<br>$$</p>
 <h5 id="UML类图-2"><a href="#UML类图-2" class="headerlink" title="UML类图"></a>UML类图</h5><img src="https://s21.ax1x.com/2024/03/21/pFft829.png" alt="" width="100%">
 
-<h5 id="Bug分析-1"><a href="#Bug分析-1" class="headerlink" title="Bug分析"></a>Bug分析</h5><p>所幸后两次作业强测没有出现Bug，后两次发现的别人的Bug有：无法处理类似于<code>f((x)^2)</code>后面的指数，还有指数没改为BigInteger的，但由于cost我无法hack，以及一些tle。</p>
+<h5 id="Bug分析-1"><a href="#Bug分析-1" class="headerlink" title="Bug分析"></a>Bug分析</h5><p>所幸后两次作业强测没有出现Bug，后两次发现的别人的Bug有：无法处理类似于<code>f((x)^2)</code>后面的指数，还有指数没改为<code>BigInteger</code>的，但由于cost我无法hack，以及一些tle。</p>
 <h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><table>
 <thead>
 <tr>
@@ -1176,9 +1177,9 @@
 <td>2.342</td>
 </tr>
 </tbody></table>
-<p>我在处理函数的<code>,</code>方法中引入了较为复杂的循环分支以支持处理嵌套函数，其实这里的嵌套交给parser也可以完成。还有就是<code>Define</code>中<code>callFunc</code>中我分别判断是<code>x/y/z</code>使得复杂度较高。我在Mono的toString中做了一些简化，同样需要各种判断。但除了<code>Lexer</code>和<code>ParseFactor</code>需要解析各种Token和因子，<code>if-else</code>难免较多之外，前面提到的还是可以进一步优化解耦使得框架更为清晰。</p>
+<p>我在处理函数逗号的<code>dealComa</code>方法中引入了较为复杂的循环分支以支持处理嵌套函数，其实这里的嵌套交给parser也可以完成。还有就是<code>Define</code>中<code>callFunc</code>中我分别判断是<code>x/y/z</code>使得复杂度较高。我在Mono的toString中做了一些简化，同样需要各种判断。但除了<code>Lexer</code>和<code>ParseFactor</code>需要解析各种Token和因子，<code>if-else</code>难免较多之外，前面提到的还是可以进一步优化解耦使得框架更为清晰。</p>
 <h3 id="总结与心得"><a href="#总结与心得" class="headerlink" title="总结与心得"></a>总结与心得</h3><ul>
-<li><p>在优化方面我则基本没做，每次做完作业就都剩下TODO，甚至将正项提前这一基本的优化我也是第二次才做。</p>
+<li><p>在优化方面我则基本没做，每次做完作业就都剩下<code>TODO</code>，甚至将正项提前这一基本的优化我也是第二次才做。</p>
 </li>
 <li><p>本单元第一次作业由于我封装的不够彻底，直到第二次作业才开始引入<code>Poly</code>类。好在思路还是统一的，并没有进行大规模的修改。</p>
 </li>
@@ -1474,7 +1475,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.3k</span>
+                        class="white-color">7.2k</span>
             
             
             
