@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>OS_lab2</title>
-      <link href="/2024/03/21/lab2-shi-yan-bao-gao/"/>
-      <url>/2024/03/21/lab2-shi-yan-bao-gao/</url>
-      
-        <content type="html"><![CDATA[<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><h4 id="Thinking-2-1"><a href="#Thinking-2-1" class="headerlink" title="Thinking 2.1"></a>Thinking 2.1</h4><p>**Q:**请根据上述说明，回答问题：在编写的 C 程序中，指针变量中存储的地址被视为虚拟地址，还是物理地址？ MIPS 汇编程序中 lw 和 sw 指令使用的地址被视为虚拟地址，还是物理地址？  </p><p><strong>A:</strong> 均为虚拟地址。</p><h4 id="Thinking-2-2"><a href="#Thinking-2-2" class="headerlink" title="Thinking 2.2"></a>Thinking 2.2</h4><p><strong>Q:</strong></p><p><strong>A:</strong></p><h4 id="Thinking-2-3"><a href="#Thinking-2-3" class="headerlink" title="Thinking 2.3"></a>Thinking 2.3</h4><p><strong>Q:</strong></p><p><strong>A:</strong></p><h4 id="Thinking-2-4"><a href="#Thinking-2-4" class="headerlink" title="Thinking 2.4"></a>Thinking 2.4</h4><p><strong>Q:</strong></p><p><strong>A:</strong></p><h4 id="Thinking-2-5"><a href="#Thinking-2-5" class="headerlink" title="Thinking 2.5"></a>Thinking 2.5</h4><p><strong>Q:</strong></p><p><strong>A:</strong></p><h4 id="Thinking-2-6"><a href="#Thinking-2-6" class="headerlink" title="Thinking 2.6"></a>Thinking 2.6</h4><p><strong>Q:</strong></p><p><strong>A:</strong></p><h4 id="Thinking-2-7"><a href="#Thinking-2-7" class="headerlink" title="Thinking 2.7"></a>Thinking 2.7</h4><p><strong>Q:</strong></p><p><strong>A:</strong></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> OS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>OO_Unit1</title>
       <link href="/2024/03/20/oo-unit1/"/>
       <url>/2024/03/20/oo-unit1/</url>
