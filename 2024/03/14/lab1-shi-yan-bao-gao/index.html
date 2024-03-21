@@ -378,21 +378,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-18
+                    2024-03-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -558,8 +558,9 @@ Disassembly of section .interp:
 
 <p>我们自己编写的<code>readelf.c</code>文件内数据类型前缀均为<code>ELF32</code>，因此可以解析的是32位的hello，却不能解析作为64位elf的自己。</p>
 <h5 id="Thinking-1-3"><a href="#Thinking-1-3" class="headerlink" title="Thinking 1.3"></a>Thinking 1.3</h5><p><strong>Q:</strong> 在理论课上我们了解到，MIPS 体系结构上电时，启动入口地址为 <code>0xBFC00000</code>（其实启动入口地址是根据具体型号而定的，由硬件逻辑确定，也有可能不是这个地址，但 一定是一个确定的地址），但实验操作系统的内核入口并没有放在上电启动地址，而是按照内存布局图放置。思考为什么这样放置内核还能保证内核入口被正确跳转到？（提示：思考实验中启动过程的两阶段分别由谁执行。）</p>
-<p><strong>A:</strong> 启动的第一阶段：硬件初始化，硬件会根据启动入口地址开始执行引导程序（Bootloader）</p>
-<p>第二阶段是内核执行阶段，引导程序会将控制权转移给内核，内核开始执行。内核的入口地址由引导程序指定的加载位置决定。</p>
+<p><strong>A:</strong> 启动的第一阶段是硬件初始化，从ROM或FLASH加载bootloader，初始化硬件，然后为软件启动做准备，做一些载入内核等工作，完成后跳转到内核入口地址，即可将CPU控制权交给内核，进入第二阶段（内核启动）。</p>
+<p>GEMU仿真器支持直接加载ELF文件内核，所以我们要做的启动流程简化为加载内核到内存，再跳转到内核入口即可。</p>
+<p>在实验中我们用<code>kernel.lds</code>将内核加载到正确位置，通过<code>ENTRY(_start)</code>设置设置程序入口为 _start，保证正确地跳转到内核入口。</p>
 <h3 id="难点分析"><a href="#难点分析" class="headerlink" title="难点分析"></a>难点分析</h3><p>我认为本次实验较难的部分主要是ELF文件的解析，还有就是补全<code>prinfk</code>要看懂每一部分在做什么，此外每个目录下的<code>Makefile</code>文件也值得认真琢磨。</p>
 <p>本次lab1课下实验首先介绍了ELF文件的结构，包括：</p>
 <p>1.<strong>ELF头（ELF Header）</strong>，即结构体<code>Elf32_Ehdr</code>，存放ELF文件信息</p>
@@ -568,9 +569,8 @@ Disassembly of section .interp:
 <p>3.<strong>段（Segment）：</strong>包含多个节</p>
 <p>4.<strong>节（Section）：</strong> 常见的节： <code>.text</code>（代码段）、<code>.data</code>（数据段）、<code>.bss</code>（未初始化的数据段）</p>
 <p>通过编译链接我们用C语言写的readelf.c生成readelf这个可执行文件，后者可以对32位ELF格式的文件进行简单的解析。</p>
-<p>介绍了内核在MIPS内存布局以及内核所处的位置；</p>
-<p>介绍了<code>kernel.lds</code> 文件（一个链接脚本Linker Script）定义了目标文件在内存中的布局和排列方式及程序入口；</p>
-<h3 id="实验体会"><a href="#实验体会" class="headerlink" title="实验体会"></a>实验体会</h3><p>本次实验我在理解指导书内容以及实验代码上花费了大量时间，需要在众多目录和文件中找到并理解彼此的关系。首先，自己对Makefile的变量定义等不够熟悉，查阅资料后才大致理解每一层的Make在干什么。</p>
+<p>介绍了MIPS虚拟内存布局以及内核所处的位置；介绍了<code>kernel.lds</code> 文件（链接脚本Linker Script），用于定义目标文件在内存中的布局和排列方式（如各个节的位置）及程序入口。</p>
+<h3 id="实验体会"><a href="#实验体会" class="headerlink" title="实验体会"></a>实验体会</h3><p>本次实验我在理解指导书内容以及实验代码上花费了大量时间，需要在众多目录和文件中找到并理解彼此的关系。首先，自己对Makefile的变量定义等不够熟悉，需要明确的是Makefile用来组织实验编写的操作系统代码；我逐渐了解到我们所编写的操作系统内核实际上是在为程序的运行提供一个基础设施/平台，我们之前编写程序，下层有操作系统；当我们在构建操作系统时下层就直接是硬件了，QEMU则负责了模拟CPU和计算机硬件。</p>
 
                 
             </div>
@@ -852,7 +852,7 @@ Disassembly of section .interp:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.2k</span>
+                        class="white-color">7.4k</span>
             
             
             

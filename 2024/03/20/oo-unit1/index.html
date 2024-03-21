@@ -462,7 +462,7 @@
 <p>这一步封装我做的不好，当时的我写到这一步已经是周五了，没有引入<code>Poly</code>。我在<code>Expr</code>、<code>Term</code>和各种<code>Factor</code>类中都写了<code>simplify()</code>方法直接返回一个<code>HashMap&lt;BigInteger,Mono&gt;</code>（也就是之后的<code>toPoly</code>），从<code>Factor</code>开始向上化简，最终在main中调用<code>expr.simplify()</code>即可获得最终化简好的HashMap。</p>
 <h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><img src="https://s21.ax1x.com/2024/03/21/pFfNkdK.jpg" alt="" width="80%">
 
-<h4 id="Bug分析"><a href="#Bug分析" class="headerlink" title="Bug分析"></a>Bug分析</h4><p>第一次作业我在预处理时加上了一个去除前导零的操作，事实上不仅<code>BigInteger</code>会自动处理前导零因此是完全多余的，而且我还把这个函数写错了，结果是数字只要有0就会被我删去一部分。这是一个比较严重的错误了，让我没想到的是强测居然只挂了一个点，真是对这个无比致命的错误来说非常的友好了orz 于是我也在第一次oo作业就获得极致的互hack乱砍体验，我用一些随机生成的数据便收获了约30%的命中率，甚至最后不知道自己在砍谁（bushi</p>
+<h4 id="Bug分析"><a href="#Bug分析" class="headerlink" title="Bug分析"></a>Bug分析</h4><p>第一次作业我在预处理时加上了一个去除前导零的操作，事实上不仅<code>BigInteger</code>会自动处理前导零，而且我还把这个函数写错了，结果是数字只要有0就会被我删去一部分，纯纯的多写了个bug。这是一个比较严重的错误了，让我没想到的是强测居然只挂了一个点，真是对这个无比致命的错误来说非常的友好了orz 于是我也在第一次oo作业就获得极致的互hack乱砍体验，我用一些随机生成的数据便收获了约30%的命中率，甚至最后不知道自己在砍谁（bushi</p>
 <p>修复bug就是把我那几行预处理删掉，至今有时想到这个错误还是不知道自己当时是怎么想的。。</p>
 <h3 id="homework2"><a href="#homework2" class="headerlink" title="homework2"></a>homework2</h3><p>第二次作业增加了：1.自定义函数 2.指数函数因子。此外要求实现多层括号嵌套化简，这一点递归下降自然可以解决。</p>
 <h4 id="设计思路-1"><a href="#设计思路-1" class="headerlink" title="设计思路"></a>设计思路</h4><p>多项式<code>Poly</code>类内用<code>ArrayList&lt;Mono&gt;</code>存储各个单项式，符号直接在<code>coe</code>中体现。</p>
@@ -560,7 +560,7 @@
 
 <p>这里还有两个细节要注意：</p>
 <p>1.在比较<code>Poly</code>之前还需要<code>removeZero()</code>操作，以除去<code>coe</code>为0的项。</p>
-<p>2.关于深克隆：我在实现的过程中在<code>addMono</code>这个函数中需要深克隆。如果不进行深克隆，会出现把<code>Mono</code>直接放到<code>poly</code>相乘的结果中，之后<code>setCoe</code>的时候会由于指针指向同一个<code>Mono</code>而导致本来想修改的是答案<code>Poly</code>的系数，但顺便也把原先作为乘数<code>Poly</code>中的<code>Mono</code>也改了。我和这个问题从早上决斗到下午才改好。</p>
+<p>2.关于深克隆：需要在<code>addMono</code>这个函数中深克隆。如果不进行深克隆，会出现把<code>Mono</code>直接放到<code>poly</code>相乘的结果中，之后<code>setCoe</code>的时候会由于指针指向同一个<code>Mono</code>而导致本来想修改的是答案<code>Poly</code>的系数，但顺便也把原先作为乘数<code>Poly</code>中的<code>Mono</code>也改了。我和这个问题从早上决斗到下午才改好。</p>
 <p>结合这样一个例子就可以说明：<code>(exp(x)+1)^2</code>。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Poly.java</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addMono</span><span class="token punctuation">(</span><span class="token class-name">Mono</span> mono<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">CloneNotSupportedException</span> <span class="token punctuation">{</span>
@@ -1474,7 +1474,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.2k</span>
+                        class="white-color">7.4k</span>
             
             
             
