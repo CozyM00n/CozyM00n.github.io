@@ -378,21 +378,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-20
+                    2024-03-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -454,13 +454,14 @@
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这样解析表达式后建立的树是一个类似于二叉树的结构。</p>
-<img src="https://s21.ax1x.com/2024/03/20/pFWTjVP.jpg" alt="" width="50%">
+<img src="https://s21.ax1x.com/2024/03/20/pFWTjVP.jpg" alt="" width="70%">
 
 <p>关于符号的处理，我在expr -&gt; expr + term这一步记录了符号，此外在每种Factor都添加了sign属性。事实上后者是没有必要的，由于只有<strong>在第一个因子/项之前，可以带一个正号或者负号</strong>，而预处理时我会将积压在每个项前连续的+-号处理掉，所以得到的表达式只需在以下两个位置加入符号判断：1.Factor乘积构成的Term前判断加减 2.至于因子前的符号，根据文法只需在NumFac前判断该数字的正负。</p>
 <h5 id="2-表达式的化简"><a href="#2-表达式的化简" class="headerlink" title="2.表达式的化简"></a>2.表达式的化简</h5><p>化简是在解析建好的表达式树从底层逐层向上化简。</p>
 <p>引入Mono类，里面只有一个exponent记录x的指数。</p>
 <p>这一步封装我做的不好，当时的我写到这一步已经是周五了，没有引入Poly。我在<code>Expr</code>、<code>Term</code>和各种<code>Factor</code>类中都写了<code>simplify()</code>方法直接返回一个<code>HashMap&lt;BigInteger,Mono&gt;</code>（也就是之后的toPoly），从Factor开始向上化简，最终在main中调用expr.simplify()即可获得最终化简好的HashMap。</p>
-<h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><h4 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h4><h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><img src="https://s21.ax1x.com/2024/03/20/pFWosOI.png" alt="" width="80%">
+<h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><h4 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h4><p>第一次作业有很多地方做的不完善，在之后的作业中有一定的修改。</p>
+<h5 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h5><img src="https://s21.ax1x.com/2024/03/20/pFWosOI.png" alt="" width="80%">
 
 <ul>
 <li><p>由于我的Mono类之间的计算分散到了各个类中而没有封装好，很必然地导致我在ExprFac中计算表达式乘方时代码复杂度很高而且重复代码多。在之后的作业中进行了解耦和封装。</p>
@@ -468,10 +469,12 @@
 <li><p>此外在parseFactor中包含解析各种因子的判断，难免地复杂度偏高。</p>
 </li>
 </ul>
-<h4 id="Bug分析"><a href="#Bug分析" class="headerlink" title="Bug分析"></a>Bug分析</h4><p>第一次作业我在预处理时加上了无比智慧的一个去除前导零的操作，事实上不仅BigInteger会自动处理前导零因此是完全多余的，而且我还把这个函数写错了，得到的数字只要有0就会被我删去一部分。这应该是一个比较严重的错误了，让我没想到的是强测居然只挂了一个点，真是对这个无比致命的错误来说非常的友好了orzz 于是我也在第一次oo作业就获得极致的互相hack经历。感觉房友的错误覆盖率也十分的广，我用一些随机生成的数据便收获了约30%的命中率，甚至最后不知道自己在砍谁（bushi。</p>
+<h4 id="Bug分析"><a href="#Bug分析" class="headerlink" title="Bug分析"></a>Bug分析</h4><p>第一次作业我在预处理时加上了一个去除前导零的操作，事实上不仅BigInteger会自动处理前导零因此是完全多余的，而且我还把这个函数写错了，结果是数字只要有0就会被我删去一部分。这应该是一个比较严重的错误了，让我没想到的是强测居然只挂了一个点，真是对这个无比致命的错误来说非常的友好了orz 于是我也在第一次oo作业就获得极致的互hack乱砍体验，我用一些随机生成的数据便收获了约30%的命中率，甚至最后不知道自己在砍谁（bushi。</p>
 <p>修复bug就是把我那几行预处理删掉，至今有时想到这个错误还是不知道自己当时是怎么想的。。</p>
+<h3 id="homework2"><a href="#homework2" class="headerlink" title="homework2"></a>homework2</h3><p>第二次作业增加了：1.自定义函数 2.指数函数因子</p>
+<h4 id="设计思路-1"><a href="#设计思路-1" class="headerlink" title="设计思路"></a>设计思路</h4><h5 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h5><p>$$<br>Define: f(x,y,z)= Expr，x扩展为x，y，z<br>$$</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>在优化方面则我一直能摆则摆，每次做完作业就都剩下TODO，甚至将正项提前这一基本的优化我也是第二次才做，总之还是不够勤快。。</li>
+<li>在优化方面则我一直<del>能摆则摆</del>，每次做完作业就都剩下TODO，甚至将正项提前这一基本的优化我也是第二次才做，总之不够勤快。。</li>
 </ul>
 
                 
@@ -756,7 +759,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">4.5k</span>
+                        class="white-color">4.6k</span>
             
             
             
