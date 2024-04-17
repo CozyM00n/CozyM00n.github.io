@@ -1,0 +1,1800 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="OO_Unit1, CozyM00nの博客">
+    <meta name="description" content="BUAA_OO_Unit1_summary">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>OO_Unit1 | CozyM00nの博客</title>
+    <link rel="icon" type="image/png" href="https://s1.ax1x.com/2023/02/05/pS6JZJP.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="CozyM00nの博客" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://s1.ax1x.com/2023/02/05/pS6JZJP.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">CozyM00nの博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-moon" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-send-o" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-heart" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://s1.ax1x.com/2023/02/05/pS6JZJP.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">CozyM00nの博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-moon"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-send-o"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-heart"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/CozyM00n/CozyM00n.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>MyGitHub
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/CozyM00n/CozyM00n.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="MyGitHub" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s21.ax1x.com/2024/03/20/pFWUSUO.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">OO_Unit1</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/OO/">
+                                <span class="chip bg-color">OO</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-03-20
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-03-21
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="OO-Unit1-表达式化简"><a href="#OO-Unit1-表达式化简" class="headerlink" title="OO_Unit1: 表达式化简"></a>OO_Unit1: 表达式化简</h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本单元OO作业主题是对给定表达式化简，第一次作业要求将含有一个<code>x</code>变量的表达式的所有括号展开。</p>
+<p>解析输入的符合课程组给定文法的表达式，对表达式的结构进行解析后进行化简，我使用了递归下降的方法对表达式解析。事实上关于表达式的解析和化简都是基于逐层递归的思想进行的——首先，表达式的解析是从上到下进行解析，核心是<code>parseExpr-&gt;parseTerm-&gt;parseFac</code>，从而建起有这三个层次的表达式树；然后再进行表达式的化简计算，这一步就是从下往上计算，计算结果可以用<code>Ploy</code>存储，每一步计算返回一个<code>Poly</code>，首先计算合并用<code>*</code>连接的<code>Factor</code>，再合并用<code>+/-</code>连接的<code>Term</code>，最终得到了<code>Poly</code>进行输出就可以了。</p>
+<p>我在完成本单元三次作业时的困难程度是递减的，第一次作业由于对递归下降思想完全没有概念，光是理解并思考完架构就花了两天时间，第二次作业增加了两大模块分别是<code>exp</code>因子和自定义函数，再加上由于我第一次作业的架构并没有很完善需要部分重构，工作量也蛮大的；至于第三次作业只有一个求导算子，在理解递归下降的思想的基础上很快就可以做完。</p>
+<p>下面是我对三次作业的分析和总结。</p>
+<h3 id="homework1"><a href="#homework1" class="headerlink" title="homework1"></a>homework1</h3><p>第一次作业的任务是展开一个单变量多项式，输出拆好括号并化简的表达式。</p>
+<h4 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h4><h5 id="表达式的解析"><a href="#表达式的解析" class="headerlink" title="表达式的解析"></a>表达式的解析</h5><p>解析工作由词法分析器<code>Lexer</code>和解析器<code>Parser</code>构成。<code>Lexer</code>负责将表达式解析为数字/符号<code>+-*^()</code>/字母<code>x</code>等基本元素(token)，为Parser的解析工作提供了<code>next()</code>函数来获取每一个元素。</p>
+<p>接下来就是<code>parser</code>进行解析，最终的返回的是一个<code>Expr</code>。</p>
+<p>我的<code>Expr</code>类中包含了只储存了一个<code>Expr</code>和一个<code>Term</code>，以及连接两者的符号<code>op</code>，在解析时以<code>expr -&gt; expr + term</code>形式建立表达式树。这里有一些细节需要注意：</p>
+<ul>
+<li>由于计算表达式是从左往右计算的，因此不能将表达式解析为<code>expr -&gt;term+ expr</code>的形式，否则会违反运算顺序。例如在计算1-1+1时若按上述方法解析就会变成1-(1+1)。</li>
+<li>但如果按照<code>exp -&gt; exp + term</code>解析，就需要在调用<code>parseExp()</code>函数内直接再调用<code>parseExp()</code>，从而陷入无限递归，解决方法是先调用<code>parseTerm</code>解析出<code>Term1</code>，将其向上转换为<code>Expr</code>。如果其后还有<code>+/-</code>，则继续调用parseTerm解析出<code>Term2</code>，更新要返回的<code>Expr=Expr+Term2</code>；如果没有<code>+/-</code>，即为递归边界，直接返回<code>Expr(Term1)</code>。</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Expr</span> <span class="token function">parseExpr</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Term</span> term1 <span class="token operator">=</span> <span class="token function">parseTerm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Exp</span> expr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Expr</span><span class="token punctuation">(</span>term1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//向上转化为Expr，结构为Expr-&gt;Term</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>lexer<span class="token punctuation">.</span><span class="token function">peak</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"+"</span><span class="token punctuation">)</span> <span class="token operator">|</span> lexer<span class="token punctuation">.</span><span class="token function">peak</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">String</span> op <span class="token operator">=</span> lexer<span class="token punctuation">.</span><span class="token function">peak</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            lexer<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Term</span> term2 <span class="token operator">=</span> <span class="token function">parseTerm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            expr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Expr</span><span class="token punctuation">(</span>expr<span class="token punctuation">,</span> term2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//expr -&gt; expr + term</span>
+            expr<span class="token punctuation">.</span><span class="token function">setOp</span><span class="token punctuation">(</span>op<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> expr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><code>Term</code>的解析思路同上，我以<code>Term -&gt; Factor * Term</code>对<code>Term</code>进行解析。由于乘法计算无需考虑从左到右的顺序，先解析<code>Factor</code>是没问题的。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Term</span> <span class="token function">parseTerm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Term</span> term <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Term</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        term<span class="token punctuation">.</span><span class="token function">setFactor</span><span class="token punctuation">(</span><span class="token function">parseFactor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>lexer<span class="token punctuation">.</span><span class="token function">peak</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            lexer<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            term<span class="token punctuation">.</span><span class="token function">setTerm</span><span class="token punctuation">(</span><span class="token function">parseTerm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> term<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这样解析表达式后建立的树是一个类似于二叉树的结构。</p>
+<img src="https://s21.ax1x.com/2024/03/20/pFWTjVP.jpg" alt="" width="70%">
+
+<p>关于符号的处理，我在<code>expr -&gt; expr + term</code>这一步记录了符号，此外在每种<code>Factor</code>都添加了<code>sign</code>属性。事实上后者是没有必要的，由于只有<strong>在第一个因子/项之前，可以带一个正号或者负号</strong>，而预处理时我会将积压在每个项前连续的<code>+-</code>号处理掉，所以得到的表达式只需在以下两个位置加入符号判断：1.<code>Factor</code>乘积构成的<code>Term</code>前判断加减 2.至于因子前的符号，根据文法只需在<code>NumFac</code>前判断该数字的正负。</p>
+<h5 id="表达式的化简"><a href="#表达式的化简" class="headerlink" title="表达式的化简"></a>表达式的化简</h5><p>化简是在解析建好的表达式树从底层逐层向上化简。</p>
+<p>引入<code>Mono</code>类，里面只有一个<code>exponent</code>记录<code>x</code>的指数。</p>
+<p>这一步封装我做的不好，当时的我写到这一步已经是周五了，没有引入<code>Poly</code>。我在<code>Expr</code>、<code>Term</code>和各种<code>Factor</code>类中都写了<code>simplify()</code>方法直接返回一个<code>HashMap&lt;BigInteger,Mono&gt;</code>（也就是之后的<code>toPoly</code>），从<code>Factor</code>开始向上化简，最终在main中调用<code>expr.simplify()</code>即可获得最终化简好的HashMap。</p>
+<h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><img src="https://s21.ax1x.com/2024/03/21/pFfNkdK.jpg" alt="" width="80%">
+
+<h4 id="Bug分析"><a href="#Bug分析" class="headerlink" title="Bug分析"></a>Bug分析</h4><p>第一次作业我在预处理时加上了一个去除前导零的操作，事实上不仅<code>BigInteger</code>会自动处理前导零，而且我还把这个函数写错了，结果是数字只要有0就会被我删去一部分，纯纯的多写了个bug。这是一个比较严重的错误了，让我没想到的是强测居然只挂了一个点，真是对这个无比致命的错误来说非常的友好了orz 于是我也在第一次oo作业就获得极致的互hack乱砍体验，我用一些随机生成的数据便收获了约30%的命中率，甚至最后不知道自己在砍谁（bushi</p>
+<p>修复bug就是把我那几行预处理删掉，至今有时想到这个错误还是不知道自己当时是怎么想的。。</p>
+<h3 id="homework2"><a href="#homework2" class="headerlink" title="homework2"></a>homework2</h3><p>第二次作业增加了：1.自定义函数 2.指数函数因子。此外要求实现多层括号嵌套化简，这一点递归下降自然可以解决。</p>
+<h4 id="设计思路-1"><a href="#设计思路-1" class="headerlink" title="设计思路"></a>设计思路</h4><p>多项式<code>Poly</code>类内用<code>ArrayList&lt;Mono&gt;</code>存储各个单项式，符号直接在<code>coe</code>中体现。</p>
+<p>单项式Mono的结构调整如下：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Mono</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">BigInteger</span> coe<span class="token punctuation">;</span> <span class="token comment">//系数</span>
+    <span class="token keyword">private</span> <span class="token class-name">BigInteger</span> exponent<span class="token punctuation">;</span> <span class="token comment">//指数</span>
+    <span class="token keyword">private</span> <span class="token class-name">Poly</span> poly <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Poly</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//exp(Poly)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h5><p>$$<br>Define: f(x_1,x_2,x_3)= Expr，将x扩展为x_1，x_2，x_3<br>$$</p>
+<p>$$<br>Call: f(Factor_1, Factor_2, Factor_3)，此处Factor_i只包含x<br>$$</p>
+<p>第二次作业在定义函数的时候保证不出现其他函数，但第三次作业可以在定义中调用之前定义过的函数。我在第二次作业中就实现了这个功能。</p>
+<p>引入<code>FuncFac</code>类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FuncFac</span> <span class="token keyword">implements</span> <span class="token class-name">Factor</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> newFunc<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Expr</span> expr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>为了保存和解析定义的函数，新建一个<code>Define</code>类来存储和解析自定义函数。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Define</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> defMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//储存读入的函数定义，Map：函数名-&gt;函数表达式，直接存储为String</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">ArrayList</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> paraMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//储存每个函数的形参列表：Map：函数名-&gt;[x1,x2,x3]</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">addFunc</span><span class="token punctuation">(</span><span class="token class-name">String</span> in<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 构造defMap</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">callFunc</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Factor</span><span class="token punctuation">&gt;</span></span> actualPara<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//返回用实参代替、形参之后的函数调用形式</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我让<code>lexer</code>在处理过程中将整个函数调用<code>f(因子,因子,...)</code>作为一个<code>Token</code>，交给parser中的<code>parseFuncFac</code>函数解析。我们建立<code>ArrayList&lt;Factor&gt; actualPara</code>作为该函数的实参表，只要将括号内的由<code>,</code>隔开的各个因子解析出来放到List中就可以了。考虑到因子内可能依然含有<code>FuncFac</code>，我将括号里各个因子内部的,替换为不会出现的其他符号，再在分别解析因子的时候替换回来。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Factor</span> <span class="token function">parseFuncFac</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Factor</span><span class="token punctuation">&gt;</span></span> actualPara <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">/*
+    * 将因子内的','换成其他字符
+    */</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> s <span class="token operator">:</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//将因子s中原本的,恢复</span>
+        <span class="token comment">//新建一个parser解析各个Factor</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//解析name=f/g/h</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">FuncFac</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> actualPara<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>至此再调用<code>FuncFac</code>的构造函数，解析<code>Define</code>中的<code>callFunc</code>返回的字符串，这样就得到解析好的函数的<code>Expr</code>了。</p>
+<h5 id="表达式因子"><a href="#表达式因子" class="headerlink" title="表达式因子"></a>表达式因子</h5><p>格式是<code>exp(因子)</code>，注意这里的因子为<strong>不带指数的表达式因子</strong>时，该表达式因子两侧必要的一层括号。为此引入<code>ExpoFac</code>类。<code>parser</code>分别解析括号内的因子和括号外的指数即可。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExpoFac</span> <span class="token keyword">implements</span> <span class="token class-name">Factor</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">Factor</span> factor<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">BigInteger</span> exp<span class="token punctuation">;</span><span class="token comment">//^a</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>作为<code>Factor</code>转化为<code>Poly</code>时，直接将指数<code>a</code>乘进<code>factor</code>。</p>
+<h5 id="关于合并同类项"><a href="#关于合并同类项" class="headerlink" title="关于合并同类项"></a>关于合并同类项</h5><p>在计算的过程中<code>Poly</code>类中有一个<code>addMono</code>的方法，我直接遍历该<code>poly</code>的<code>MonoList</code>是否含有待加入<code>mono</code>的同类项，也就是需要重写<code>mono</code>的<code>equals</code>方法。<br>$$<br>Mono = Coe * x^{a} * exp (Poly)<br>$$</p>
+<p>$$<br>Poly=\sum_{}^{}Mono<br>$$</p>
+<p>要想判断两个<code>mono</code>是否可以合并，只需要比较<code>x</code>的指数<code>a</code>以及<code>e</code>指数上的<code>Poly</code>，这两者均相等就可以合并。作为<code>BigInteger</code>的<code>a</code>直接比较即可，而<code>Poly</code>的相等则需要我们再写相应的<code>equals</code>方法。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Mono.java</span>
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">myEqual</span><span class="token punctuation">(</span><span class="token class-name">Mono</span> mono<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//第一次调用Mono的equal，不需要看coe</span>
+    <span class="token keyword">return</span> exponent<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>mono<span class="token punctuation">.</span>exponent<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>poly<span class="token punctuation">,</span> mono<span class="token punctuation">.</span>poly<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那么<code>Poly</code>相等该如何判断呢？显然所有<code>Mono</code>相等时才能算是相等。这里我遇到了两个问题：</p>
+<ul>
+<li><p>对于<code>Poly</code>的比较我们实际上需要比较两个<code>List</code>中的元素是否完全一样，而<code>MonoList</code>中的<code>Mono</code>由于被add进来时顺序是未知的，那么这两个<code>List</code>该如何比较？</p>
+<ul>
+<li>我们第一次调用<code>mono</code>是否相等时是不需要比较<code>Coe</code>的。然而在比较<code>exp</code>指数上的内容时需要的是<code>mono</code>完全相等，系数也需要加入比较。否则如果按照最开始的<code>mono</code>比较策略就会出现将<code>exp(x)</code>和<code>exp((3*x))</code>合并的情况。</li>
+</ul>
+</li>
+</ul>
+<p>为了解决以上问题，我在<code>Poly</code>中重写了<code>equals</code>方法，返回的是同时比较<code>coe</code>，指数<code>a</code>和<code>poly</code>的结果。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//...</span>
+        <span class="token keyword">return</span> <span class="token class-name">Mono</span><span class="token punctuation">.</span><span class="token function">myEqual</span><span class="token punctuation">(</span>monos<span class="token punctuation">,</span> poly<span class="token punctuation">.</span>monos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这需要我在<code>Mono</code>中写的另一个静态的用于比较的方法。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">myEqual</span><span class="token punctuation">(</span><span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Mono</span><span class="token punctuation">&gt;</span></span> m1<span class="token punctuation">,</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Mono</span><span class="token punctuation">&gt;</span></span> m2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> m1<span class="token punctuation">.</span><span class="token function">containsAll</span><span class="token punctuation">(</span>m2<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> m2<span class="token punctuation">.</span><span class="token function">containsAll</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这里的<code>containsAll</code>会调用我重写的<code>Mono</code>的<code>equals</code>比较方法。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//...</span>
+        <span class="token class-name">Mono</span> mono <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Mono</span><span class="token punctuation">)</span> o<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> exponent<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>mono<span class="token punctuation">.</span>exponent<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>coe<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>mono<span class="token punctuation">.</span>coe<span class="token punctuation">)</span>
+                <span class="token operator">&amp;&amp;</span> <span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>poly<span class="token punctuation">,</span> mono<span class="token punctuation">.</span>poly<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//此后调用的都是Poly的equals方法，需要比较系数</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里还有两个细节要注意：</p>
+<p>1.在比较<code>Poly</code>之前还需要<code>removeZero()</code>操作，以除去<code>coe</code>为0的项。</p>
+<p>2.关于深克隆：需要在<code>addMono</code>这个函数中深克隆。如果不进行深克隆，会出现把<code>Mono</code>直接放到<code>poly</code>相乘的结果中，之后<code>setCoe</code>的时候会由于指针指向同一个<code>Mono</code>而导致本来想修改的是答案<code>Poly</code>的系数，但顺便也把原先作为乘数<code>Poly</code>中的<code>Mono</code>也改了。我和这个问题从早上决斗到下午才改好。</p>
+<p>结合这样一个例子就可以说明：<code>(exp(x)+1)^2</code>。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Poly.java</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addMono</span><span class="token punctuation">(</span><span class="token class-name">Mono</span> mono<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">CloneNotSupportedException</span> <span class="token punctuation">{</span>
+    <span class="token comment">//计算Poly+Mono</span>
+    <span class="token class-name">Mono</span> monoClone <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Mono</span><span class="token punctuation">)</span> mono<span class="token punctuation">.</span><span class="token function">myClone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 	<span class="token keyword">if</span><span class="token punctuation">(</span>可以合并同类项<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            m<span class="token punctuation">.</span><span class="token function">setCoe</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">getCoe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>mono<span class="token punctuation">.</span><span class="token function">getCoe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>monos<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>monoClone<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出"></a>结果输出</h5><p>我在<code>Mono</code>和<code>Poly</code>类中分别写了<code>toString</code>方法用于输出。</p>
+<p>需要注意的是在<code>toString</code>的规范：只进行转换为字符串的操作。<strong>不要在<code>toString</code>里做一些改变对象内容的事请</strong>。如果在该函数中改变了对象中的内容可能会导致调试的时候结果正确而最后输出错误的情况。调试的时候对于对象会自动调用<code>toString</code>函数，如果没有写<code>toString</code>就会输出<code>@(toHex)HashCode</code>。</p>
+<img src="https://s21.ax1x.com/2024/03/21/pFfGox1.png" alt="" width="90%">
+
+
+
+<h5 id="UML类图-1"><a href="#UML类图-1" class="headerlink" title="UML类图"></a>UML类图</h5><img src="https://s21.ax1x.com/2024/03/21/pFfNAIO.jpg" alt="" width="100%">
+
+<h3 id="homework3"><a href="#homework3" class="headerlink" title="homework3"></a>homework3</h3><h5 id="设计思路-2"><a href="#设计思路-2" class="headerlink" title="设计思路"></a>设计思路</h5><p>第三次作业增加了求导因子。第三次作业在我们之前的递归下降架构上很快就能写好。为此我加入<code>DiffFac</code>类。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DiffFac</span> <span class="token keyword">implements</span> <span class="token class-name">Factor</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">Expr</span> expr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>先把每个因子的<code>toDiff()</code>写了，全部返回<code>Poly</code>。至于求导因子的嵌套需要如下处理。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token class-name">Poly</span> <span class="token function">toDiffPoly</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">CloneNotSupportedException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> expr<span class="token punctuation">.</span><span class="token function">toDiffPoly</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toDiffPoly</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>所以还要对<code>Mono</code>和<code>Poly</code>的求导，求导的过程也很直观。这里只要注意一下指数为0的时候返回<code>0</code>就可以了。</p>
+<p>$$<br>Mono’ = (Coe*a) * x^{a-1} * exp (Poly)+Coe*x^{a}*exp(Poly)*Poly’<br>$$</p>
+<p>$$<br>Poly’=\sum_{}^{}mono’<br>$$</p>
+<h5 id="UML类图-2"><a href="#UML类图-2" class="headerlink" title="UML类图"></a>UML类图</h5><img src="https://s21.ax1x.com/2024/03/21/pFft829.png" alt="" width="100%">
+
+<h5 id="Bug分析-1"><a href="#Bug分析-1" class="headerlink" title="Bug分析"></a>Bug分析</h5><p>所幸后两次作业强测没有出现Bug，后两次发现的别人的Bug有：无法处理类似于<code>f((x)^2)</code>后面的指数，还有指数没改为<code>BigInteger</code>的，但由于cost我无法hack，以及一些tle。</p>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><table>
+<thead>
+<tr>
+<th>method</th>
+<th>CogC</th>
+<th align="left">ev(G)</th>
+<th>iv(G)</th>
+<th>v(G)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Change.dealComa(String)</td>
+<td>19.0</td>
+<td align="left">1.0</td>
+<td>6.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>Define.callFunc(String, ArrayList)</td>
+<td>18.0</td>
+<td align="left">3.0</td>
+<td>7.0</td>
+<td>13.0</td>
+</tr>
+<tr>
+<td>Lexer.next()</td>
+<td>8.0</td>
+<td align="left">2.0</td>
+<td>6.0</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>Poly.isSimple()</td>
+<td>8.0</td>
+<td align="left">4.0</td>
+<td>6.0</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>Mono.toString()</td>
+<td>7.0</td>
+<td align="left">2.0</td>
+<td>4.0</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>Parser.parseFactor()</td>
+<td>7.0</td>
+<td align="left">6.0</td>
+<td>8.0</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>Lexer.getFunc()</td>
+<td>6.0</td>
+<td align="left">1.0</td>
+<td>3.0</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>Parser.parseExpr()</td>
+<td>6.0</td>
+<td align="left">1.0</td>
+<td>4.0</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>Term.toDiffPoly()</td>
+<td>6.0</td>
+<td align="left">1.0</td>
+<td>4.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>Define.addFunc(String)</td>
+<td>4.0</td>
+<td align="left">1.0</td>
+<td>3.0</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>Poly.addPoly(Poly, int)</td>
+<td>4.0</td>
+<td align="left">1.0</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Mono.equals(Object)</td>
+<td>3.0</td>
+<td align="left">3.0</td>
+<td>3.0</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>Parser.parseNumFac()</td>
+<td>3.0</td>
+<td align="left">1.0</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Poly.addMono(Mono)</td>
+<td>3.0</td>
+<td align="left">3.0</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Poly.changeOrder()</td>
+<td>3.0</td>
+<td align="left">3.0</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Poly.mulPoly(Poly, Poly)</td>
+<td>3.0</td>
+<td align="left">1.0</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Poly.removeZero()</td>
+<td>3.0</td>
+<td align="left">1.0</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Poly.toString()</td>
+<td>3.0</td>
+<td align="left">2.0</td>
+<td>3.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>ExprFac.toDiffPoly()</td>
+<td>2.0</td>
+<td align="left">2.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Lexer.getNumber()</td>
+<td>2.0</td>
+<td align="left">1.0</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Mono.toDiffPoly()</td>
+<td>2.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Poly.addPolyNew(Poly, Poly)</td>
+<td>2.0</td>
+<td align="left">1.0</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Poly.equals(Object)</td>
+<td>2.0</td>
+<td align="left">3.0</td>
+<td>1.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Poly.powPoly(Poly, BigInteger)</td>
+<td>2.0</td>
+<td align="left">2.0</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>Term.toPoly()</td>
+<td>2.0</td>
+<td align="left">2.0</td>
+<td>2.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>VarFac.toDiffPoly()</td>
+<td>2.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>ExpoFac.toPoly()</td>
+<td>1.0</td>
+<td align="left">2.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Expr.toDiffPoly()</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Expr.toPoly()</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Main.main(String[])</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Mono.isOnlyE()</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Mono.isOnlyX()</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Mono.myEqual(ArrayList, ArrayList)</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Mono.myEqual(Mono)</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Parser.parseExponent()</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Parser.parseFuncFac()</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Parser.parseTerm(int)</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Poly.myClone()</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Poly.toDiffPoly()</td>
+<td>1.0</td>
+<td align="left">1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>Change.process(String)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>DiffFac.DiffFac(Expr)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>DiffFac.toDiffPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>DiffFac.toPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ExpoFac.ExpoFac(Factor, BigInteger)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ExpoFac.toDiffPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Expr.Expr()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Expr.addTerm(Term)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ExprFac.ExprFac(Expr, BigInteger)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>ExprFac.toPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>FuncFac.FuncFac(String, ArrayList)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>FuncFac.toDiffPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>FuncFac.toPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Lexer.Lexer(String)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Lexer.peak()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.Mono(BigInteger, BigInteger)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.Mono(BigInteger, BigInteger, Poly)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.Mono(Poly)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.getCoe()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.getExponent()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.getPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.mulMono(Mono, Mono)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.myClone()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.setCoe(BigInteger)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Mono.setExponent(BigInteger)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>NumFac.NumFac(BigInteger)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>NumFac.toDiffPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>NumFac.toPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Parser.Parser(Lexer)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Parser.parseDiffFac()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Parser.parseExpoFac()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Parser.parseExprFac()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Parser.parseVarFac()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Poly.Poly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Term.Term()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Term.addFactor(Factor)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Term.getSign()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Term.setSign(int)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>VarFac.VarFac(BigInteger)</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>VarFac.toPoly()</td>
+<td>0.0</td>
+<td align="left">1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>143.0</td>
+<td align="left">104.0</td>
+<td>159.0</td>
+<td>185.0</td>
+</tr>
+<tr>
+<td>Average</td>
+<td>1.810</td>
+<td align="left">1.316</td>
+<td>2.013</td>
+<td>2.342</td>
+</tr>
+</tbody></table>
+<p>我在处理函数逗号的<code>dealComa</code>方法中引入了较为复杂的循环分支以支持处理嵌套函数，其实这里的嵌套交给parser也可以完成。还有就是<code>Define</code>中<code>callFunc</code>中我分别判断是<code>x/y/z</code>使得复杂度较高。我在<code>Mono</code>的<code>toString</code>中做了一些简化，同样需要各种判断。但除了<code>Lexer</code>和<code>ParseFactor</code>需要解析各种Token和因子，<code>if-else</code>难免较多之外，前面提到的还是可以进一步优化解耦使得框架更为清晰。</p>
+<h3 id="总结与心得"><a href="#总结与心得" class="headerlink" title="总结与心得"></a>总结与心得</h3><ul>
+<li><p>在优化方面我则基本没做，每次做完作业就都剩下<code>TODO</code>，甚至将正项提前这一基本的优化我也是第二次才做。</p>
+</li>
+<li><p>本单元第一次作业由于我封装的不够彻底，直到第二次作业才开始引入<code>Poly</code>类。好在思路还是统一的，并没有进行大规模的修改。</p>
+</li>
+</ul>
+<p>本单元的递归下降方法要求我们写代码时头脑非常清晰，需要明确每一层递归到底发生了什么。我对面向对象思维的理解也更为深刻，在思考架构的时候尽量降低代码间的耦合度。此外我在判断对象相等时所用的<code>equals</code>和<code>HashCode</code>相关知识有了更进一步的了解，其中有很多更深刻的知识有待学习，总而言之还是很有收获的一次作业。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/OO/">
+                                    <span class="chip bg-color">OO</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/03/21/lab2-shi-yan-bao-gao/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/04/13/pFjqNGV.jpg" class="responsive-img" alt="OS_lab2">
+                        
+                        <span class="card-title">OS_lab2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OS_lab2_report
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OS/">
+                        <span class="chip bg-color">OS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/03/20/oo-unit2/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/04/13/pFjqp8K.png" class="responsive-img" alt="OO_Unit2">
+                        
+                        <span class="card-title">OO_Unit2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OO_Unit2_summary
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OO/">
+                        <span class="chip bg-color">OO</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2024</span>
+            
+            <a href="/about" target="_blank">CozyM00n</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">16.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "2";
+                        var startDate = "2";
+                        var startHour = "17";
+                        var startMinute = "5";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/CozyM00n/CozyM00n.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1292769829@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1292769829" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1292769829" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="90" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

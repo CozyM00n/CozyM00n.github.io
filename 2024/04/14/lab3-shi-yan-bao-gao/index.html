@@ -1,0 +1,1232 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="OS_lab3, CozyM00nの博客">
+    <meta name="description" content="BUAA_OS_lab3_report">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>OS_lab3 | CozyM00nの博客</title>
+    <link rel="icon" type="image/png" href="https://s1.ax1x.com/2023/02/05/pS6JZJP.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="CozyM00nの博客" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://s1.ax1x.com/2023/02/05/pS6JZJP.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">CozyM00nの博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-moon" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-send-o" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-heart" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://s1.ax1x.com/2023/02/05/pS6JZJP.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">CozyM00nの博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-moon"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-send-o"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-heart"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/CozyM00n/CozyM00n.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>MyGitHub
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/CozyM00n/CozyM00n.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="MyGitHub" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s21.ax1x.com/2024/04/13/pFjqNGV.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">OS_lab3</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/OS/">
+                                <span class="chip bg-color">OS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-04-14
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-04-17
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><h4 id="Thinking-3-1"><a href="#Thinking-3-1" class="headerlink" title="Thinking 3.1"></a>Thinking 3.1</h4><p><strong>Q:  Thinking 3.1 请结合 MOS 中的页目录自映射应用解释代码中 <code>e-&gt;env_pgdir[PDX(UVPT)]= PADDR(e-&gt;env_pgdir) | PTE_V</code> 的含义</strong>  </p>
+<p><strong>A:</strong>  </p>
+<p>该语句实现了自映射。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">e<span class="token operator">-&gt;</span>env_pgdir<span class="token punctuation">[</span><span class="token function">PDX</span><span class="token punctuation">(</span>UVPT<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">PADDR</span><span class="token punctuation">(</span>e<span class="token operator">-&gt;</span>env_pgdir<span class="token punctuation">)</span> <span class="token operator">|</span> PTE_V<span class="token punctuation">;</span>
+<span class="token comment">//实现了映射：虚拟地址UVPT &lt;-&gt; 该进程页目录自身的pa</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这使得UVPT这个虚拟地址对应的页目录项，该页目录项不再对应二级页表，而是指向页目录自身。</p>
+<blockquote>
+<p>自映射的作用：在用户空间划分出一部分，使得用户可以通过访问这部分空间得到二级页表以及页目录中的内容。</p>
+<p>具体来说，<code>UVPT</code>以上的4KB空间(1024个页表的大小)被标记为 <code>User VPT</code>。我们用这部分虚拟地址<code>va</code>访存的话过程如下：</p>
+<p>首先，这个地址会经过页目录，<code>PDX(va)</code> 的结果和 <code>UVPT</code> 相同，我们进入到索引对应的二级页表——由于上述自映射，我们得到的还是<strong>页目录自身</strong>。</p>
+<p>好的，我们在页目录中重新来一遍，这次通过 <code>PTX(va)</code> 计算索引，结果就不一定还是页目录项了。我们找到了一个物理页，取出了其中的数据。可是等等，这个物理页却不再是一般的物理页了，而是<strong>作为二级页表的物理页</strong>。这样我们就<strong>取到了二级页表的内容</strong>。</p>
+<p>另外假如我们恰好取得的 <code>PTX(va)</code> 值与 <code>PDX(va)</code> 相同，那么我们绕了两圈，最终还是处在页目录之中，这样我们就<strong>取到了页目录的内容</strong>。</p>
+</blockquote>
+<h4 id="Thinking-3-2"><a href="#Thinking-3-2" class="headerlink" title="Thinking 3.2"></a>Thinking 3.2</h4><p><strong>Q:</strong>  </p>
+<p><strong><code>elf_load_seg</code> 以函数指针的形式，接受外部自定义的回调函数 <code>map_page</code>。 请你找到与之相关的 <code>data</code> 这一参数在此处的来源，并思考它的作用。没有这个参数可不可以？为什么？</strong> </p>
+<p><strong>A:</strong> </p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//lib/elfloader.c</span>
+<span class="token keyword">int</span> <span class="token function">elf_load_seg</span><span class="token punctuation">(</span>Elf32_Phdr <span class="token operator">*</span>ph<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>bin<span class="token punctuation">,</span> <span class="token class-name">elf_mapper_t</span> map_page<span class="token punctuation">,</span> <span class="token keyword">void</span> <span class="token operator">*</span>data<span class="token punctuation">)</span>
+    
+<span class="token comment">//kern/env.c</span>
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">load_icode</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Env</span> <span class="token operator">*</span>e<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>binary<span class="token punctuation">,</span> <span class="token class-name">size_t</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">const</span> Elf32_Ehdr <span class="token operator">*</span>ehdr <span class="token operator">=</span> <span class="token function">elf_from</span><span class="token punctuation">(</span>binary<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+	<span class="token comment">//...for循环遍历所有的程序头表</span>
+    	<span class="token comment">//如果其对应的程序需要被加载到内存，则调用elf_load_seg进行加载</span>
+		<span class="token function">panic_on</span><span class="token punctuation">(</span><span class="token function">elf_load_seg</span><span class="token punctuation">(</span>ph<span class="token punctuation">,</span> binary <span class="token operator">+</span> ph<span class="token operator">-&gt;</span>p_offset<span class="token punctuation">,</span> load_icode_mapper<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//...</span>
+	e<span class="token operator">-&gt;</span>env_tf<span class="token punctuation">.</span>cp0_epc <span class="token operator">=</span> ehdr <span class="token operator">-&gt;</span> e_entry<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">load_icode_mapper</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>data<span class="token punctuation">,</span> u_long va<span class="token punctuation">,</span> <span class="token class-name">size_t</span> offset<span class="token punctuation">,</span> 
+                             u_int perm<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>src<span class="token punctuation">,</span> <span class="token class-name">size_t</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//该函数 将数据映射到虚拟地址所在的页上</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Env</span> <span class="token operator">*</span>env <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">Env</span> <span class="token operator">*</span><span class="token punctuation">)</span>data<span class="token punctuation">;</span> <span class="token comment">//将 data 还原为进程控制块</span>
+    <span class="token comment">//...</span>
+    <span class="token keyword">return</span> <span class="token function">page_insert</span><span class="token punctuation">(</span>env<span class="token operator">-&gt;</span>env_pgdir<span class="token punctuation">,</span> env<span class="token operator">-&gt;</span>env_asid<span class="token punctuation">,</span> p<span class="token punctuation">,</span> va<span class="token punctuation">,</span> perm<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//env可区别不同进程的相同虚拟地址</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>elf_load_seg</code> 函数根据程序头表中的信息将<code>bin</code>中的数据加载到指定位置。其中<code>void* data</code>是回调函数需要使用的参数。<code>elf_load_seg</code> 函数在<code>load_icode</code>函数中被调用。</p>
+<p>这里的<code>struct Env *e</code>是<code>load_icode</code>函数的传入参数，<code>env_create</code>中我们用<code>env_alloc</code>分配到新的Env，调用<code>load_icode</code>函数来为进程加载 ELF 程序。</p>
+<p>所以，这个<code>data</code>参数作为待加载的进程管理块指针是必要的，它被传入回调函数<code>load_icode_mapper()</code>，用来告知后者加载到哪个进程的虚拟内存中。</p>
+<h4 id="Thinking-3-3"><a href="#Thinking-3-3" class="headerlink" title="Thinking 3.3"></a>Thinking 3.3</h4><p>**Q:  结合 elf_load_seg 的参数和实现，考虑该函数需要处理哪些页面加载的情况。 **</p>
+<p><strong>A:</strong></p>
+<ul>
+<li>(1) 段起始地址未页面对齐</li>
+</ul>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">u_long offset <span class="token operator">=</span> va <span class="token operator">-</span> <span class="token function">ROUNDDOWN</span><span class="token punctuation">(</span>va<span class="token punctuation">,</span> PAGE_SIZE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>offset <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//先映射到内存的页中</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>r <span class="token operator">=</span> <span class="token function">map_page</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> va<span class="token punctuation">,</span> offset<span class="token punctuation">,</span> perm<span class="token punctuation">,</span> bin<span class="token punctuation">,</span>
+				  <span class="token function">MIN</span><span class="token punctuation">(</span>bin_size<span class="token punctuation">,</span> PAGE_SIZE <span class="token operator">-</span> offset<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> r<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>(2) 处理数据中间完整的部分，通过循环不断将数据加载到页上。</li>
+</ul>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> offset <span class="token operator">?</span> <span class="token function">MIN</span><span class="token punctuation">(</span>bin_size<span class="token punctuation">,</span> PAGE_SIZE <span class="token operator">-</span> offset<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> bin_size<span class="token punctuation">;</span> i <span class="token operator">+=</span> PAGE_SIZE<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>r <span class="token operator">=</span> <span class="token function">map_page</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> va <span class="token operator">+</span> i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> perm<span class="token punctuation">,</span> bin <span class="token operator">+</span> i<span class="token punctuation">,</span> <span class="token function">MIN</span><span class="token punctuation">(</span>bin_size <span class="token operator">-</span> i<span class="token punctuation">,</span> PAGE_SIZE<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> r<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>(3) 段大小大于数据大小的情况，补充空页面</li>
+</ul>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> sgsize<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>r <span class="token operator">=</span> <span class="token function">map_page</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> va <span class="token operator">+</span> i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> perm<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token function">MIN</span><span class="token punctuation">(</span>sgsize <span class="token operator">-</span> i<span class="token punctuation">,</span> PAGE_SIZE<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> r<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    i <span class="token operator">+=</span> PAGE_SIZE<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Thinking-3-4"><a href="#Thinking-3-4" class="headerlink" title="Thinking 3.4"></a>Thinking 3.4</h4><p>**Q: ** </p>
+<blockquote>
+<p>这里的 <code>env_tf.cp0_epc</code> 字段指示了进程恢复运行时 PC 应恢复到的位置。我们要运行的进程的代码段预先被载入到了内存中，且程序入口为 <code>e_entry</code>，当我们运行进程时，CPU 将自动从PC 所指的位置开始执行二进制码。</p>
+</blockquote>
+<p><strong>思考上面这一段话，并根据自己在 Lab2 中的理解，回答： 你认为这里的 <code>env_tf.cp0_epc</code> 存储的是物理地址还是虚拟地址?</strong></p>
+<p><strong>A:</strong>  虚拟地址。对于每个用户进程来说<code>entry_point</code>都应该是一样的（如果不手动进行设置的话），虚拟地址能够实现程序的每次执行都从一个固定的地址开始。</p>
+<h4 id="Thinking-3-5"><a href="#Thinking-3-5" class="headerlink" title="Thinking 3.5"></a>Thinking 3.5</h4><p>**Q: **</p>
+<p><strong>试找出 0、1、2、3 号异常处理函数的具体实现位置。8 号异常（系统调用） 涉及的 do_syscall() 函数将在 Lab4 中实现</strong></p>
+<p><strong>A:</strong></p>
+<p>0 号异常 的处理函数为 <code>handle_int</code>，表示中断，由时钟中断、控制台中断等中断造成<br>1 号异常 的处理函数为 <code>handle_mod</code>，表示存储异常，进行存储操作时该页被标记为只读<br>2 号异常 的处理函数为<code>handle_tlb</code>，表示 TLB load 异常<br>3 号异常 的处理函数为<code>handle_tlb</code>，表示 TLB store 异常</p>
+<p><code>kern/genex.S</code></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;asm/asm.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stackframe.h&gt;</span></span>
+
+<span class="token punctuation">.</span>macro BUILD_HANDLER exception handler
+<span class="token function">NESTED</span><span class="token punctuation">(</span>handle_\exception<span class="token punctuation">,</span> TF_SIZE <span class="token operator">+</span> <span class="token number">8</span><span class="token punctuation">,</span> zero<span class="token punctuation">)</span>
+    move    a0<span class="token punctuation">,</span> sp
+    addiu   sp<span class="token punctuation">,</span> sp<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span>
+    jal     \handler
+    addiu   sp<span class="token punctuation">,</span> sp<span class="token punctuation">,</span> <span class="token number">8</span>
+    j       ret_from_exception
+<span class="token function">END</span><span class="token punctuation">(</span>handle_\exception<span class="token punctuation">)</span>
+<span class="token punctuation">.</span>endm
+
+<span class="token punctuation">.</span>text
+
+<span class="token function">FEXPORT</span><span class="token punctuation">(</span>ret_from_exception<span class="token punctuation">)</span>
+    RESTORE_ALL
+    eret
+
+<span class="token function">NESTED</span><span class="token punctuation">(</span>handle_int<span class="token punctuation">,</span> TF_SIZE<span class="token punctuation">,</span> zero<span class="token punctuation">)</span> <span class="token comment">// handle_int 实现</span>
+    mfc0    t0<span class="token punctuation">,</span> CP0_CAUSE
+    mfc0    t2<span class="token punctuation">,</span> CP0_STATUS
+    and     t0<span class="token punctuation">,</span> t2
+    andi    t1<span class="token punctuation">,</span> t0<span class="token punctuation">,</span> STATUS_IM7
+    bnez    t1<span class="token punctuation">,</span> timer_irq
+timer_irq<span class="token operator">:</span>
+    li      a0<span class="token punctuation">,</span> <span class="token number">0</span>
+    j       schedule
+<span class="token function">END</span><span class="token punctuation">(</span>handle_int<span class="token punctuation">)</span>
+
+BUILD_HANDLER tlb do_tlb_refill <span class="token comment">// kern/tlbex.c</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">if</span> <span class="token expression"><span class="token operator">!</span><span class="token function">defined</span><span class="token punctuation">(</span>LAB<span class="token punctuation">)</span> <span class="token operator">||</span> LAB <span class="token operator">&gt;=</span> <span class="token number">4</span></span></span>
+BUILD_HANDLER mod do_tlb_mod <span class="token comment">// kern/tlbex.c</span>
+BUILD_HANDLER sys do_syscall <span class="token comment">// kern/syscall_all.c</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+
+BUILD_HANDLER reserved do_reserved <span class="token comment">// kern/traps.c</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="Thinking-3-6"><a href="#Thinking-3-6" class="headerlink" title="Thinking 3.6"></a>Thinking 3.6</h4><p><strong>Q:  阅读 <code>entry.S</code>、<code>genex.S</code> 和 <code>env_asm.S</code> 这几个文件，并尝试说出时钟中断 在哪些时候开启，在哪些时候关闭。</strong></p>
+<p><strong>A:</strong> </p>
+<h2 id="难点分析"><a href="#难点分析" class="headerlink" title="难点分析"></a>难点分析</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Env</span> <span class="token operator">*</span><span class="token function">env_create</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">void</span> <span class="token operator">*</span>binary<span class="token punctuation">,</span> <span class="token class-name">size_t</span> size<span class="token punctuation">,</span> <span class="token keyword">int</span> priority<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">struct</span> <span class="token class-name">Env</span> <span class="token operator">*</span>e<span class="token punctuation">;</span>
+	<span class="token comment">/* Step 1: Use 'env_alloc' to alloc a new env. */</span>
+	<span class="token comment">/* Exercise 3.7: Your code here. (1/3) */</span>
+	<span class="token function">env_alloc</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>e<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">/* Step 2: Assign the 'priority' to 'e' and mark its 'env_status' as runnable. */</span>
+	<span class="token comment">/* Exercise 3.7: Your code here. (2/3) */</span>
+	e<span class="token operator">-&gt;</span>env_pri <span class="token operator">=</span> priority<span class="token punctuation">;</span>
+	e<span class="token operator">-&gt;</span>env_status <span class="token operator">=</span> ENV_RUNNABLE<span class="token punctuation">;</span>
+	<span class="token comment">/* Step 3: Use 'load_icode' to load the image from 'binary', and insert 'e' into
+	 * 'env_sched_list' using 'TAILQ_INSERT_HEAD'. */</span>
+	<span class="token comment">/* Exercise 3.7: Your code here. (3/3) */</span>
+	<span class="token function">load_icode</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> binary<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">TAILQ_INSERT_HEAD</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>env_sched_list<span class="token punctuation">,</span> e<span class="token punctuation">,</span> env_sched_link<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">return</span> e<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">PCB(进程控制块)由ENV结构体实现
+
+#define LIST_ENTRY(type)                                                                   
+	struct {                           
+		struct type *le_next;  /* next element */ 
+		struct type **le_prev; /* address of previous next element */ 
+    }
+
+LIST_ENTRY(Env) env_link;
+
+/-----------------------/
+void env_init(void);
+1.初始化2个list
+2.创建一个 “模板页目录”，设置该页将 pages 和 envs （即所有页控制块和所有进程控制块的内存空间）（内核）分别映射到 UPAGES 和 UENVS （用户）的空间中.并且在后续进程创建新的页目录时，也要首先复制模板页目录中的内容。使得用户程序也能够通过 UPAGES 和 UENVS 的用户地址空间获取 Page 和 Env 的信息。
+即：映射：UTOP 到 UVPT 的虚拟地址空间 &lt;-&gt; 内核数组pages, envs
+
+/*************************/
+struct Env *env_create(const void *binary, size_t size, int priority);
+在mips_init中调用，用于创建一个进程
+    
+/************************/
+int env_alloc(struct Env **new, u_int parent_id);
+1 从env_free_list获取一个空的PCB : struct Env *e;
+2 env_setup_vm(e); 始化新进程的地址空间
+3 初始化Env结构体的一些变量
+4 将e从free_list中移除，*new=e
+    
+	/**********************/
+	static int env_setup_vm(struct Env *e); 
+	//初始化进程控制块的用户地址空间
+	1 申请一个page(物理页)作为页目录
+	2 (UTOP ~ UVPT)这一段虚拟地址空间对应的页表项
+    
+/***************************/
+static void load_icode(struct Env *e, const void *binary, size_t size)
+加载可执行文件binary到进程e的内存中
+1 调用了 elf_from 函数从二进制数据中读取了页表信息,(简单地对二进制数据做类型转换，并检查是否确为 ELF 文件头)
+2 遍历所有的程序头表,取出对应的程序头，如果其中的 p_type 类型为 PT_LOAD，说明其对应的程序需要被加载到内存中。我们调用 elf_load_seg 函数来进行加载
+3 最后，我们将进程控制块中 trap frame 的 epc cp0 寄存器的值设置为 ELF 文件中设定的程序入口地址   
+        
+    /**********定义在lib中************/ 
+    int elf_load_seg(Elf32_Phdr *ph, const void *bin,    \
+                     elf_mapper_t map_page, void *data)
+    //将elf文件的一个segment加载到内存
+    //将bin中的数据加载到指定位置
+    1 Elf32_Phdr *ph：指向 ELF 文件中一个程序段头部的指针，可获取程序段va等信息
+    2 按页 调用回调函数 map_page(data, va, offset, perm, bin, ?? len)
+	
+    elf_mapper_t map_page 
+    //是一个回调函数，用于将数据映射到虚拟地址所在的页上
+    static int load_icode_mapper(void *data, u_long va, size_t offset, 
+                                 u_int perm, const void *src, size_t len)
+    1 data还原为进程控制块Env*
+    2 申请空闲物理页p
+    3 如果存在需要拷贝的数据(src!= null)，用memcpy将src数据拷贝到p对应的内存
+    4 调用 page_insert 将虚拟地址映射到页上，需要env结构体中的信息，用来区别不同进程的相同虚拟地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>IE:中断使能,1代表中断开启</p>
+<h2 id="实验心得"><a href="#实验心得" class="headerlink" title="实验心得"></a>实验心得</h2>
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/OS/">
+                                    <span class="chip bg-color">OS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/04/14/lab3-shi-yan-bao-gao/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/04/13/pFjqNGV.jpg" class="responsive-img" alt="OS_lab3">
+                        
+                        <span class="card-title">OS_lab3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OS_lab3_report
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OS/">
+                        <span class="chip bg-color">OS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/03/21/lab2-shi-yan-bao-gao/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/04/13/pFjqNGV.jpg" class="responsive-img" alt="OS_lab2">
+                        
+                        <span class="card-title">OS_lab2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OS_lab2_report
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OS/">
+                        <span class="chip bg-color">OS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2024</span>
+            
+            <a href="/about" target="_blank">CozyM00n</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">16.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "2";
+                        var startDate = "2";
+                        var startHour = "17";
+                        var startMinute = "5";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/CozyM00n/CozyM00n.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1292769829@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1292769829" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1292769829" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="90" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
