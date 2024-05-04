@@ -378,14 +378,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-17
+                    2024-04-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    4.9k
                 </div>
                 
 
@@ -500,6 +500,8 @@
 </ul>
 <h4 id="UML类图-amp-时序图"><a href="#UML类图-amp-时序图" class="headerlink" title="UML类图&amp;时序图"></a>UML类图&amp;时序图</h4><img src="https://s21.ax1x.com/2024/03/29/pFobQ81.png" width="100%">
 
+<img src="https://s21.ax1x.com/2024/04/19/pkSkfDH.png" style="zoom:50%;">
+
 <h3 id="hw6"><a href="#hw6" class="headerlink" title="hw6"></a>hw6</h3><h4 id="设计思路-1"><a href="#设计思路-1" class="headerlink" title="设计思路"></a>设计思路</h4><p>第二次迭代新增了电梯<code>RESET</code>功能，电梯接收到重置请求后尽快停下，将所有人放出后修改相关属性，再投入使用，此外还需要自行设计电梯的分配。为了杜绝自由竞争的使用，需要电梯接到请求后输出<code>RECEIVE</code>后才能进行合法移动。</p>
 <h5 id="处理RESET请求"><a href="#处理RESET请求" class="headerlink" title="处理RESET请求"></a>处理RESET请求</h5><p>首先对于<code>RESET</code>的处理，调度器<code>Manager</code>类新增方法<code>resetElevator</code>，该方法修改需重置电梯对应	<code>RequestTable</code>的<code>resetRequest</code>属性，使其从原先的<code>null</code>变成相应的重置请求。那么电梯便可以在<code>getAdvice</code>时获得<code>RESET</code>的建议，从而执行重置请求。注意请求表类中的<code>setResetReq</code>方法需要<code>notifyAll</code>。此外结束条件需要加上一条：所有电梯都不在reset才能结束。</p>
 <p>需要注意的是电梯的<code>reset</code>执行顺序。如果先把<code>Person</code>扔回总表再输出，可能出现同一个人被<code>RECEIVE</code>两次的情况，所以要先立即输出<code>RESET_BEGIN</code>。</p>
@@ -542,14 +544,16 @@
 
 <h4 id="UML类图-amp-时序图-1"><a href="#UML类图-amp-时序图-1" class="headerlink" title="UML类图&amp;时序图"></a>UML类图&amp;时序图</h4><img src="https://s21.ax1x.com/2024/04/15/pFvRJYQ.png">
 
+<img src="https://s21.ax1x.com/2024/04/19/pkSkWKe.png" style="zoom:50%;">
+
 <h3 id="hw7"><a href="#hw7" class="headerlink" title="hw7"></a>hw7</h3><p>第7次作业增加了双轿厢电梯的重置请求，复杂度进一步提高。</p>
 <h4 id="设计思路-2"><a href="#设计思路-2" class="headerlink" title="设计思路"></a>设计思路</h4><p>本次作业我将<code>Manager</code>改为单例模式，这样做的好处是其他类需要使用总表<code>allRequest</code>的时候可以通过<code>Manager</code>直接获取，实现起来更加清晰和安全。此外前两次作业我在main函数让各个线程分别开始跑，本次作业改为层次化的<code>start</code>，使得程序层次更清晰。</p>
 <p>我在<code>Manager</code>类中实现两类电梯的创建和管理。首先是<code>Manager</code>的构造方法负责创建总表，6个电梯的分请求表对象，以及6部电梯的启动。实际上我们在调度器<code>Manager</code>中并非直接管理电梯，甚至不需要专门设置管理<code>Elevator</code>电梯类的容器——我们实际上都是通过操作电梯所对应的<code>requestTable</code>来进行管理的。我先前使用<code>List</code>管理6个请求表，但考虑到之后有双轿厢电梯和普通电梯同时运行，本次作业我简单地使用<code>HashMap&lt;Integer, RequestTable&gt; requestMap</code>统一管理两种电梯。具体映射方法如下。初始就只需新建key为1-6的电梯请求表。查看给定<code>id</code>的电梯，如果是普通电梯就会存在<code>key=id</code>， 如果是双轿电梯则存在<code>key=id + 6</code>和<code>key=id + 12</code>。</p>
 <table>
 <thead>
 <tr>
-<th align="center"><code>Key</code></th>
-<th align="center"><code>Value</code></th>
+<th align="center">Key</th>
+<th align="center">Value</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -656,10 +660,15 @@
 <h4 id="Bug分析-2"><a href="#Bug分析-2" class="headerlink" title="Bug分析"></a>Bug分析</h4><p>本次作业强测和互测都没有出现bug。一些细节是：<br>我在对<code>RequestTable</code>的属性<code>(NormalResetReq，dcResetRequest，needAway)</code>进行<code>set</code>的时候都进行了<code>notifyAll</code>。对于第二次作业会被hack的数据，我继续采用sleep，也就是如果随机到的电梯刚好在reset就睡，然后获取新的随机id，随到一个能用的电梯为止。这样既保证了很难被hack，又保证了这样一个最基本的策略分数注定很低。</p>
 <h4 id="UML类图-amp-时序图-2"><a href="#UML类图-amp-时序图-2" class="headerlink" title="UML类图&amp;时序图"></a>UML类图&amp;时序图</h4><img src="https://s21.ax1x.com/2024/04/15/pFvhq1J.png">
 
+<img src="https://s21.ax1x.com/2024/04/19/pkSkc8K.png" style="zoom:50%;">
+
+<h3 id="变和不变"><a href="#变和不变" class="headerlink" title="变和不变"></a>变和不变</h3><p>我在三次迭代中总体架构没有太大的变化，基本是直接在原先的架构上增加新的功能。首先<code>Input，Manager，Elevator</code>三个线程类的共嫩没有改变，<code>RequestTable</code>作为共享资源的性质及其传递信息的功能也没有改变。同样我的调度策略<del>由于没有</del>也没有变化。</p>
+<p>为了实现新增的两种类型<code>RESET</code>，我在<code>Manager</code>中分别新增了相关的同步方法，通过请求表共享信息。另外电梯的策略以及<code>run</code>方法也要做相关调整。对于双轿厢电梯的重置还为<code>Person</code>类新增了属性以辨别乘客换乘请求是否结束。</p>
 <h3 id="总结与心得"><a href="#总结与心得" class="headerlink" title="总结与心得"></a>总结与心得</h3><img src="https://s21.ax1x.com/2024/04/17/pFxI5aq.png" alt="final">
 
 <p>本单元让我对多线程有了深刻的体会，同时我也加强了合理进行规划设计，降低耦合，让线程间各司其职的意识，加深了我对面向对象思想的理解。我也又一次意识到保持代码的简洁和结构的清晰是多么重要。</p>
 <p>传说中的电梯单元总算是快结束了，总体来看我三次作业的完成和debug过程果然是困难重重。之前我习惯性打断点调试的方法不再适用，我非常清晰地记得第三次迭代的周四周五的两点钟依然在宿舍debug，<del>看到错误的输出仿佛能听到我电梯相撞的声音。。</del>虽然最后没有出现很大的问题，但不足之处也很明显，就是为了保证最基本的正确性可以说是一点优化也没做了，几乎全是睡过去的。希望以后能在优化方面做得更好吧orz</p>
+<p>最后，<strong>感谢X267三位神仙的巨大帮助orzzzzzzzz/(ㄒoㄒ)/~~</strong></p>
 
                 
             </div>
@@ -725,18 +734,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/03/20/oo-unit1/">
+                <a href="/2024/03/20/oo-unit3/">
                     <div class="card-image">
                         
-                        <img src="https://s21.ax1x.com/2024/03/20/pFWUSUO.jpg" class="responsive-img" alt="OO_Unit1">
+                        <img src="https://s21.ax1x.com/2024/04/13/pFjqp8K.png" class="responsive-img" alt="OO_Unit2">
                         
-                        <span class="card-title">OO_Unit1</span>
+                        <span class="card-title">OO_Unit2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            BUAA_OO_Unit1_summary
+                            BUAA_OO_Unit2_summary
                         
                     </div>
                     <div class="publish-info">
@@ -948,7 +957,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.3k</span>
+                        class="white-color">24.6k</span>
             
             
             
