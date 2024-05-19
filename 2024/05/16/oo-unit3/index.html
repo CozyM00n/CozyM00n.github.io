@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="404, CozyM00nの博客">
-    <meta name="description" content="CozyM00nの博客">
+    <meta name="keywords" content="OO_Unit3, CozyM00nの博客">
+    <meta name="description" content="BUAA_OO_Unit3_summary">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>404 | CozyM00nの博客</title>
+    <title>OO_Unit3 | CozyM00nの博客</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2023/02/05/pS6JZJP.png">
     
 
@@ -309,29 +309,29 @@
 
 </header>
 
-    <style type="text/css">
-    /* don't remove. */
-    .about-cover {
-        height: 90.2vh;
-    }
-</style>
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s21.ax1x.com/2024/04/13/pFjqp8K.png')">
+    <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+            <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="title center-align">
-                        404 Sorry 您找的页面不存在！
-                    </div>
-                    <div class="title center-align">
-                        试试右上角的<span style="color:blue;font-weight:bold">搜索</span>功能？
-                    </div>
-                    <div class="title center-align">
-                        <a href="/" target="_blank">返回首页</a>
-                    </div>
-                    <div class="description center-align">
-                        Oops！页面走丢了！
-                    </div>
+                    <h1 class="description center-align post-title">OO_Unit3</h1>
                 </div>
             </div>
         </div>
@@ -339,9 +339,419 @@
 </div>
 
 
-    <script>
-        $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
-    </script>
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/OO/">
+                                <span class="chip bg-color">OO</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-05-16
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-05-16
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="OO-Unit3-规格化设计"><a href="#OO-Unit3-规格化设计" class="headerlink" title="OO_Unit3: 规格化设计"></a>OO_Unit3: 规格化设计</h1><h3 id="测试分析"><a href="#测试分析" class="headerlink" title="测试分析"></a>测试分析</h3><h4 id="黑箱测试"><a href="#黑箱测试" class="headerlink" title="黑箱测试"></a>黑箱测试</h4><p>黑箱测试只根据软件的功能需求和规格说明来设计测试用例，测试人员不需要了解程序的内部结构或实现细节。测试的目的是验证软件的功能是否符合预期。由于只需要了解需求和规格说明，并基于此编写测试用例即可。</p>
+<p>此测试方法更接近用户的视角，能发现功能性缺陷，类似于oo中强测；然而可能无法覆盖所有代码路径，导致一些内部缺陷未被发现，且测试数据依赖需求文档和规格说明的准确性和完整性。</p>
+<h4 id="白箱测试"><a href="#白箱测试" class="headerlink" title="白箱测试"></a>白箱测试</h4><p>白箱测试通过检查代码、控制流和数据流来设计测试用例。测试的目的是验证代码的正确性和逻辑。测试人员必须熟悉程序的代码和内部结构，测试用例也是根据代码结构、逻辑路径、条件和分支等编写的；主要测试内部逻辑：验证代码实现是否正确，包括逻辑错误、路径覆盖、循环、条件判断等。可以通过静态分析工具或覆盖率分析工具确保所有代码路径都经过测试。</p>
+<p>此方法可以发现隐藏在代码中的逻辑错误和缺陷，提供详细的代码覆盖信息，帮助提高代码质量，有助于优化代码，提升性能；但需要测试人员具备编程和代码分析能力，测试用例编写相对复杂且耗时，且难以模拟用户的实际使用场景。</p>
+<p>在实际的软件测试中，黑箱测试和白箱测试通常结合使用，互为补充。黑箱测试从功能和需求的角度出发，确保软件功能正确；白箱测试从代码实现的角度出发，确保代码质量和逻辑正确。通过综合使用两种测试方法，可以更全面地发现软件中的缺陷，提高软件的可靠性和稳定性。</p>
+<h4 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h4><p>对软件中的最小可测试部分（比如一个函数或方法）进行测试，以确保其功能正确。</p>
+<ul>
+<li><strong>粒度最小</strong>：测试的对象是代码的最小单元，可以快速得到反馈。</li>
+<li><strong>白箱测试</strong>：通常由开发人员编写，自动化测试代码的内部逻辑，比如我们作业的Junit。</li>
+</ul>
+<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>通过测试软件的功能和行为，验证其是否满足需求和规格说明；目的是确保软件功能按预期工作，验证功能需求和业务规则的实现。</p>
+<ul>
+<li><p><strong>黑箱测试</strong>：不关注内部实现，只关注输入输出和功能表现。</p>
+</li>
+<li><p><strong>基于需求</strong>：测试用例根据需求文档和规格说明编写。</p>
+</li>
+<li><p><strong>用户视角</strong>：模拟用户操作，验证软件的功能。</p>
+</li>
+</ul>
+<h4 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h4><p>在单元测试的基础上，将多个单元模块集成在一起进行测试，验证模块组合后的功能和性能，以确保它们之间的<strong>接口和交互</strong>正确。用于测试模块之间的交互和接口，可以包含黑箱和白箱测试的元素。</p>
+<h4 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h4><p>通过施加超出正常工作负荷的压力，测试系统在极端条件下的表现和稳定性。通常是施加高负载、高并发等极端条件，关注系统的响应时间、吞吐量、稳定性等性能指标。类似于我们平时强测和互测中构造出一些极端的数据刀人或者测试自己程序的性能。</p>
+<h4 id="回归测试"><a href="#回归测试" class="headerlink" title="回归测试"></a>回归测试</h4><p>指在软件发生变更后（如修复缺陷、添加新功能、优化代码），重新测试系统，以确保变更没有引入新的缺陷。对已有功能的再测试，涵盖受变更影响的所有功能模块。目的是确保新代码的变更没有破坏已有功能，验证缺陷修复和新功能实现的正确性。</p>
+<p>每种测试类型在软件开发和测试过程中都有其特定的作用和目标，结合使用这些测试方法，可以全面保障软件的质量和可靠性。</p>
+<h4 id="数据构造策略"><a href="#数据构造策略" class="headerlink" title="数据构造策略"></a>数据构造策略</h4><p><strong>手捏数据：</strong>实际上有很多bug是一些很简单的数据就可以测试出来的，并不需要很复杂的数据。就算是用数据生成器得到的几千行输入，我们也希望能将其简化以减轻debug盯着屏幕的痛苦。比如在hw9的<code>qbs</code>指令，我们就可以通过先简单地构造出少量块分离和合并的基础数据，从而明确自己的程序是在何种情况下会发生问题，而没有必要对着几千行的数据发愁。</p>
+<p>对于一些函数如果有tle的忧虑可以尽量优化算法，但鉴于与本单元主题关系不大，好像对今年对时间的要求没有卡的那么死。比如我的<code>valueSum</code>没有采用动态维护，cpu时间最长似乎是4-5s的样子。</p>
+<p>还有就是生成更强的数据时注意一些边界条件的设定，比如Tag的除0，id为负等等，还是得细心阅读jml，好好检查。</p>
+<h3 id="规格与实现分离"><a href="#规格与实现分离" class="headerlink" title="规格与实现分离"></a>规格与实现分离</h3><p>本次单元三次作业强测互测都没有出现问题。然而，在完成作业的时候总会怀疑各种地方会不会超时，也不知道课程组会卡时间到什么程度，然后就权衡很久该采用什么策略…..</p>
+<p>需要注意的是规格和实现分离，课程组给的jml实际上只是用最朴素直接的语言告诉程序的设计者最终需要怎么样的需求，至于具体如何实现，则完全和jml的表述无关，完全由我们自己来决定每个功能如何实现。</p>
+<p>比如，为了实现$$O(1)$$的复杂度进行查找，我们大量使用了Map这一数据结构。我在实现并查集时单独引入了类<code>DisjiontSet</code>，在实现<code>dijkstra</code>查找最短路径的时候引入了<code>Node</code>类来记录各个节点，这也充分体现了规格和具体实现分离的思想。</p>
+<h3 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h3><h4 id="hw9"><a href="#hw9" class="headerlink" title="hw9"></a>hw9</h4><p>在我的实现下，首先需要明确：并查集本身并不知道两个节点之间是否认识，通过<code>find</code>找到的父亲相等只代表两者是<strong>可达的</strong>(isCircle)。所以并查集的作用只是：<strong>判断两个人是否可达，而非是否认识，只是为了维护Block的个数。</strong></p>
+<p>使用延迟重建整个并查集的思路：在MyNetwork类中设置一个脏位<code>needRebuild</code>，如果有删边操作就把脏位设置为<code>true</code>，这时认为整个并查集已经失效。</p>
+<p>具体思路如下，是一个简单易行的做法。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ar（加边）</td>
+<td>如果脏位为0，则维护并查集（进行merge）；否则不维护</td>
+</tr>
+<tr>
+<td>mr（删边）</td>
+<td>将脏位设置为1，此时认为整个并查集已经失效</td>
+</tr>
+<tr>
+<td>询问（isCircle和qbs）</td>
+<td>如果脏位为1，重建整个并查集，否则并查集有效</td>
+</tr>
+</tbody></table>
+<h4 id="hw10"><a href="#hw10" class="headerlink" title="hw10"></a>hw10</h4><p>主要加了一个<code>queryShortestPath</code>指令，我采用了迪杰斯特拉计算最短路径的方法。缺点就是跑一遍的话出发点到所有路径的最短距离都跑出来了，但实际上只会用到一个。所以我设置了一个脏位。每次跑出来的结果用一个Map来存储：<code>&lt;出发点id，&lt;其他所有点，出发点到该点的距离&gt;&gt;</code>，对以下两种指令的应对方法如下：</p>
+<ul>
+<li><p><code>ar</code>：只加了孤立点，到任何点的距离都为正无穷，反映到之前存储的map就是不存在key，抛异常即可</p>
+</li>
+<li><p><code>mr(删边情况)/ar</code>：设置脏位，下次查询需要重新跑dijkstra。</p>
+</li>
+</ul>
+<p>其余一些询问的指令我都采用了动态维护，但由于<code>valueSum</code>有些麻烦就摆烂了，遍历了下熟人，复杂度$$O(mn)$$</p>
+<h4 id="hw11"><a href="#hw11" class="headerlink" title="hw11"></a>hw11</h4><p>最愉快的一集，<del>舍友一晚上写完了甚至不敢相信自己</del>。只增加了一些常规的操作，只要按照jml细心地一步一步写问题就不大。</p>
+<p>然而后来自己的代码超过500行了，为了满足checkStyle无奈只能新建一个类再继续写。。</p>
+<h3 id="Junit测试"><a href="#Junit测试" class="headerlink" title="Junit测试"></a>Junit测试</h3><p>需要每次作业为一个函数写Junit测试。</p>
+<p>Junit主要涉及<strong>数据构造</strong>和<strong>规格检查</strong>。由于我没有尝试在本地对我的Junit代码进行测试，导致我在编写Junit测试的时候心里完全没底，也只能通过交上去的反馈判断正误。</p>
+<p>对于构造数据，在第一次作业我尝试使用了多次跑随机数据，效果也还好；不过后来都是只构造了一组较为复杂的数据。至于规格检查，由于不知道课程组提供的错误代码究竟会错到什么程度，我们必须按照jml规格一个字不差地进行最全面的检查。</p>
+<h3 id="学习体会"><a href="#学习体会" class="headerlink" title="学习体会"></a>学习体会</h3><p>转眼间oo第三单元也接近尾声，相比前两个单元较大的思维量，这一单元更多注重的是代码的严谨和质量。jml类似于逻辑表达式的方式非常严谨，但也导致（对我来说）可读性不那么强。这一单元下来我也掌握了基于jml规格的项目开发流程，学会了最基本jml的阅读和书写，了解并实践了测试的流程，并且体会到了规格与设计分离的思想。</p>
+<p>感谢267的3位神仙舍友以及提供评测机的大佬们orzzz</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/OO/">
+                                    <span class="chip bg-color">OO</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/05/16/oo-unit3/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/04/13/pFjqp8K.png" class="responsive-img" alt="OO_Unit3">
+                        
+                        <span class="card-title">OO_Unit3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OO_Unit3_summary
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OO/">
+                        <span class="chip bg-color">OO</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/05/14/lab5-shi-yan-bao-gao/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/04/30/pkFTsUO.jpg" class="responsive-img" alt="OS_lab5">
+                        
+                        <span class="card-title">OS_lab5</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OS_lab5_report
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OS/">
+                        <span class="chip bg-color">OS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 

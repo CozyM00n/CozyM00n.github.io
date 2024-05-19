@@ -6,7 +6,7 @@
   <link href="http://cozym00n.github.io/atom.xml" rel="self"/>
   
   <link href="http://cozym00n.github.io/"/>
-  <updated>2024-05-09T15:50:01.868Z</updated>
+  <updated>2024-05-16T08:31:28.198Z</updated>
   <id>http://cozym00n.github.io/</id>
   
   <author>
@@ -17,11 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>OO_Unit3</title>
+    <link href="http://cozym00n.github.io/2024/05/16/oo-unit3/"/>
+    <id>http://cozym00n.github.io/2024/05/16/oo-unit3/</id>
+    <published>2024-05-16T03:31:34.000Z</published>
+    <updated>2024-05-16T08:31:28.198Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;OO-Unit3-规格化设计&quot;&gt;&lt;a href=&quot;#OO-Unit3-规格化设计&quot; class=&quot;headerlink&quot; title=&quot;OO_Unit3: 规格化设计&quot;&gt;&lt;/a&gt;OO_Unit3: 规格化设计&lt;/h1&gt;&lt;h3 id=&quot;测试分析&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="OO" scheme="http://cozym00n.github.io/tags/OO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OS_lab5</title>
+    <link href="http://cozym00n.github.io/2024/05/14/lab5-shi-yan-bao-gao/"/>
+    <id>http://cozym00n.github.io/2024/05/14/lab5-shi-yan-bao-gao/</id>
+    <published>2024-05-14T12:31:34.000Z</published>
+    <updated>2024-05-18T03:14:30.289Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;思考题&quot;&gt;&lt;a href=&quot;#思考题&quot; class=&quot;headerlink&quot; title=&quot;思考题&quot;&gt;&lt;/a&gt;思考题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Thinking 5.1&lt;/strong&gt; 如果通过 kseg0</summary>
+        
+      
+    
+    
+    
+    
+    <category term="OS" scheme="http://cozym00n.github.io/tags/OS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>267病隙随笔</title>
     <link href="http://cozym00n.github.io/2024/05/09/cjy-zi-liao-shou-ji/"/>
     <id>http://cozym00n.github.io/2024/05/09/cjy-zi-liao-shou-ji/</id>
     <published>2024-05-09T03:31:34.000Z</published>
-    <updated>2024-05-09T15:50:01.868Z</updated>
+    <updated>2024-05-19T08:17:29.621Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
@@ -38,7 +85,7 @@
     <link href="http://cozym00n.github.io/2024/05/06/zzy/"/>
     <id>http://cozym00n.github.io/2024/05/06/zzy/</id>
     <published>2024-05-06T03:31:34.000Z</published>
-    <updated>2024-05-09T15:43:03.804Z</updated>
+    <updated>2024-05-19T08:14:20.399Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
@@ -121,18 +168,18 @@
   </entry>
   
   <entry>
-    <title>OO_Unit3</title>
-    <link href="http://cozym00n.github.io/2024/03/20/oo-unit3/"/>
-    <id>http://cozym00n.github.io/2024/03/20/oo-unit3/</id>
+    <title>OO_Unit2</title>
+    <link href="http://cozym00n.github.io/2024/03/20/oo-unit2/"/>
+    <id>http://cozym00n.github.io/2024/03/20/oo-unit2/</id>
     <published>2024-03-20T03:31:34.000Z</published>
-    <updated>2024-05-04T04:32:57.736Z</updated>
+    <updated>2024-04-19T07:05:22.949Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;OO-Unit3-规格化设计&quot;&gt;&lt;a href=&quot;#OO-Unit3-规格化设计&quot; class=&quot;headerlink&quot; title=&quot;# OO_Unit3: 规格化设计&quot;&gt;&lt;/a&gt;# OO_Unit3: 规格化设计&lt;/h1&gt;&lt;h3 id=&quot;架构设计&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h1 id=&quot;OO-Unit2-电梯调度&quot;&gt;&lt;a href=&quot;#OO-Unit2-电梯调度&quot; class=&quot;headerlink&quot; title=&quot;OO_Unit2: 电梯调度&quot;&gt;&lt;/a&gt;OO_Unit2: 电梯调度&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
         
       
     
@@ -156,29 +203,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;OO-Unit1-表达式化简&quot;&gt;&lt;a href=&quot;#OO-Unit1-表达式化简&quot; class=&quot;headerlink&quot; title=&quot;OO_Unit1: 表达式化简&quot;&gt;&lt;/a&gt;OO_Unit1: 表达式化简&lt;/h1&gt;&lt;h3 id=&quot;前言&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="OO" scheme="http://cozym00n.github.io/tags/OO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OO_Unit2</title>
-    <link href="http://cozym00n.github.io/2024/03/20/oo-unit2/"/>
-    <id>http://cozym00n.github.io/2024/03/20/oo-unit2/</id>
-    <published>2024-03-20T03:31:34.000Z</published>
-    <updated>2024-04-19T07:05:22.949Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;OO-Unit2-电梯调度&quot;&gt;&lt;a href=&quot;#OO-Unit2-电梯调度&quot; class=&quot;headerlink&quot; title=&quot;OO_Unit2: 电梯调度&quot;&gt;&lt;/a&gt;OO_Unit2: 电梯调度&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
         
       
     
