@@ -1,0 +1,1192 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="OS_lab2, CozyM00nの博客">
+    <meta name="description" content="BUAA_OS_lab2_report">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>OS_lab2 | CozyM00nの博客</title>
+    <link rel="icon" type="image/png" href="https://s1.ax1x.com/2023/02/05/pS6JZJP.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="CozyM00nの博客" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://s1.ax1x.com/2023/02/05/pS6JZJP.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">CozyM00nの博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-moon" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-send-o" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-heart" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://s1.ax1x.com/2023/02/05/pS6JZJP.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">CozyM00nの博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-moon"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-send-o"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-heart"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/CozyM00n/CozyM00n.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>MyGitHub
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/CozyM00n/CozyM00n.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="MyGitHub" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s21.ax1x.com/2024/04/13/pFjqNGV.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">OS_lab2</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/OS/">
+                                <span class="chip bg-color">OS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-03-21
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-05-02
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    10 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><h4 id="Thinking-2-1"><a href="#Thinking-2-1" class="headerlink" title="Thinking 2.1"></a>Thinking 2.1</h4><p><strong>Q:  请根据上述说明，回答问题：在编写的 C 程序中，指针变量中存储的地址被视为虚拟地址，还是物理地址？ MIPS 汇编程序中 lw 和 sw 指令使用的地址被视为虚拟地址，还是物理地址？</strong>  </p>
+<p><strong>A:</strong>  均为虚拟地址。</p>
+<h4 id="Thinking-2-2"><a href="#Thinking-2-2" class="headerlink" title="Thinking 2.2"></a>Thinking 2.2</h4><p><strong>Q:</strong>  </p>
+<p><strong>• 从可重用性的角度，阐述用宏来实现链表的好处。</strong></p>
+<p><strong>• 查看实验环境中的<code> /usr/include/sys/queue.h</code>，了解其中单向链表与循环链表的实现，比较它们与本实验中使用的双向链表，分析三者在插入与删除操作上的性能差异。</strong></p>
+<p><strong>A:</strong> 宏定义使得我们在不必担心地址和栈的管理的情况下实现函数的功能，使得代码更为简洁和清晰，可读性和可维护性更强。</p>
+<p><strong>单项链表：</strong>如果要在指定项之后插入，可以以O(1)直接进行，若是在指定项之前插入，或删除指定项，则需从头开始遍历以获得指定项的前一项。</p>
+<p><strong>双向链表：</strong>由于可以直接获得某一项的前两项，所以指定项的前/后一项的插入和指定项删除都可以以O(1)实现。</p>
+<p><strong>循环链表：</strong> 由于维护了一个指向尾部的指针，可以实现O(1)在tail和head之间插入；其余性质同单向链表。</p>
+<h4 id="Thinking-2-3"><a href="#Thinking-2-3" class="headerlink" title="Thinking 2.3"></a>Thinking 2.3</h4><p><strong>Q: 请阅读 include/queue.h 以及 include/pmap.h, 将 Page_list 的结构梳理清楚，选择正确的展开结构。</strong></p>
+<p><strong>A:</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Page_list</span> <span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+        <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+            <span class="token keyword">struct</span> <span class="token class-name">Page</span> <span class="token operator">*</span>le_next<span class="token punctuation">;</span>
+            <span class="token keyword">struct</span> <span class="token class-name">Page</span> <span class="token operator">*</span><span class="token operator">*</span>le_prec<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> pp_link<span class="token punctuation">;</span>
+        u_short pp_ref<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token operator">*</span> lh_first<span class="token punctuation">;</span>   
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="Thinking-2-4"><a href="#Thinking-2-4" class="headerlink" title="Thinking 2.4"></a>Thinking 2.4</h4><p>**Q: ** </p>
+<p><strong>• 请阅读上面有关 TLB 的描述，从虚拟内存和多进程操作系统的实现角度，阐述 ASID的必要性。</strong></p>
+<p><strong>• 请阅读 MIPS 4Kc 文档《MIPS32® 4K™ Processor Core Family Software User’sManual》的 Section 3.3.1 与 Section 3.4，结合 ASID 段的位数，说明 4Kc 中可容纳不同的地址空间的最大数量</strong></p>
+<p><strong>A:</strong></p>
+<p>每个进程都有其对应的页表，ASID用于区分当前虚拟地址是在哪个进程中使用的，使得同一虚拟地址在不同地址空间正确被映射到不同的物理地址中。</p>
+<p>ASID段共6位，因此4Kc中最多可容纳<code>2^6=64</code>个不同的地址空间。</p>
+<h4 id="Thinking-2-5"><a href="#Thinking-2-5" class="headerlink" title="Thinking 2.5"></a>Thinking 2.5</h4><p><strong>• tlb_invalidate 和 tlb_out 的调用关系？</strong></p>
+<p><code>tlb_invalidate</code> 调用了 <code>tlb_out</code>函数。</p>
+<p><strong>• 请用一句话概括 tlb_invalidate 的作用。</strong></p>
+<p>将该地址空间的va虚拟地址对应的表项清空。</p>
+<p><strong>• 逐行解释 tlb_out 中的汇编代码。</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">LEAF</span><span class="token punctuation">(</span>tlb_out<span class="token punctuation">)</span>
+<span class="token punctuation">.</span>set noreorder
+    mfc0    t0<span class="token punctuation">,</span> CP0_ENTRYHI <span class="token comment">//将EntryHi的原有值保存到t0寄存器</span>
+    mtc0    a0<span class="token punctuation">,</span> CP0_ENTRYHI <span class="token comment">//将a0中保存的旧表项的Key(VPN+ASID)写入EntryHi</span>
+    nop
+    <span class="token comment">/* Step 1: Use 'tlbp' to probe TLB entry */</span>
+    <span class="token comment">/* Exercise 2.8: Your code here. (1/2) */</span>
+    tlbp <span class="token comment">//根据EntryHi中的Key在TLB中找到相应表项，将表项索引存入Index</span>
+    nop
+    <span class="token comment">/* Step 2: Fetch the probe result from CP0.Index */</span>
+    mfc0    t1<span class="token punctuation">,</span> CP0_INDEX <span class="token comment">//将Index中的值存入t1寄存器</span>
+<span class="token punctuation">.</span>set reorder
+    bltz    t1<span class="token punctuation">,</span> NO_SUCH_ENTRY <span class="token comment">//如果t1&lt;0，即没有在TLB中找到EntryHi对应的表项则跳转</span>
+<span class="token punctuation">.</span>set noreorder
+    mtc0    zero<span class="token punctuation">,</span> CP0_ENTRYHI <span class="token comment">//将EntryHi，EntryLo0，EntryLo1寄存器赋值为0</span>
+    mtc0    zero<span class="token punctuation">,</span> CP0_ENTRYLO0
+    mtc0    zero<span class="token punctuation">,</span> CP0_ENTRYLO1
+    nop
+    <span class="token comment">/* Step 3: Use 'tlbwi' to write CP0.EntryHi/Lo into TLB at CP0.Index  */</span>
+    <span class="token comment">/* Exercise 2.8: Your code here. (2/2) */</span>
+    tlbwi <span class="token comment">//将清零后的EntryHi/Lo值写入对应Index的表项中</span>
+<span class="token punctuation">.</span>set reorder
+
+NO_SUCH_ENTRY<span class="token operator">:</span>
+    mtc0    t0<span class="token punctuation">,</span> CP0_ENTRYHI <span class="token comment">//将EntryHi恢复为原始值</span>
+    j       ra <span class="token comment">//函数返回</span>
+<span class="token function">END</span><span class="token punctuation">(</span>tlb_out<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h4 id="Thinking-2-6"><a href="#Thinking-2-6" class="headerlink" title="Thinking 2.6"></a>Thinking 2.6</h4><p><strong>Q:  简单了解并叙述 X86 体系结构中的内存管理机制，比较 X86 和 MIPS 在内存管理上的区别</strong></p>
+<p><strong>A:</strong> </p>
+<ul>
+<li>X86有三种不同的地址空间：逻辑地址，线性地址，物理地址。通过分段机制将逻辑地址转换为线性地址，线性地址经过分页机制的处理转换为物理地址。x86可能存在不分页的情况，但一定分段。MIPS则不分段，直接采用分页机制来管理内存。</li>
+<li>TLB不命中时： MIPS 会触发TLB Refill 异常，内核的 <code>tlb_refill_handler</code> 会以 <code>pgd_current</code> 为当前进程的 <code>PGD</code> 基址，索引获得转换失败的虚址对应的 <code>PTE</code>，并将其填入TLB，然后CPU再用刚刚转换失败的虚拟地址重新访问以下TLB；X86 在 TLB 不命中时，是由硬件 MMU 以 CR3 为当前进程的 PGD 基址，索引获得 PFN 后，直接输出 PA。同时 MMU 会填充 TLB 以加快下次转换的速度。对于转换失败的虚址，MIPS使用<code>BadVAddr</code>寄存器存放，X86使用<code>CR2</code>存放。</li>
+</ul>
+<h4 id="Thinking-A-1"><a href="#Thinking-A-1" class="headerlink" title="Thinking A.1"></a>Thinking A.1</h4><p><strong>Q:  在现代的 64 位系统中，提供了 64 位的字长，但实际上不是 64 位页式存储系统。假设在 64 位系统中采用三级页表机制，页面大小 4KB。由于 64 位系统中字长为8B，且页目录也占用一页，因此页目录中有 512 个页目录项，因此每级页表都需要 9 位。因此在 64 位系统下，总共需要 3 × 9 + 12 = 39 位就可以实现三级页表机制，并不需要 64位。</strong></p>
+<p><strong>现考虑上述 39 位的三级页式存储系统，虚拟地址空间为 512 GB，若三级页表的基地址为 PTbase，请计算：</strong><br><strong>• 三级页表页目录的基地址。</strong><br><strong>• 映射到页目录自身的页目录项（自映射）</strong></p>
+<img src="lab2%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/image-20240411125928105.png" alt="image-20240411125928105" style="zoom:50%;">
+
+
+
+<h2 id="难点分析"><a href="#难点分析" class="headerlink" title="难点分析"></a>难点分析</h2><p>页控制块是 <code>struct Page</code> 类型的结构体。每一个页控制块对应一个物理页。Page的链表宏展开后：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Page</span> <span class="token punctuation">{</span>
+	<span class="token keyword">struct</span> <span class="token punctuation">{</span>
+		<span class="token keyword">struct</span> <span class="token class-name">Page</span> <span class="token operator">*</span>le_next<span class="token punctuation">;</span>
+		<span class="token keyword">struct</span> <span class="token class-name">Page</span> <span class="token operator">*</span><span class="token operator">*</span>le_prev<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span> pp_link<span class="token punctuation">;</span>
+	u_short pp_ref<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>**空闲链表(page_free_list):**空闲物理页对应的 Page 结构体全部插入这个链表中  </p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Page_list</span> page_free_list<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>pmap.h</code>中定义了：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Page_list</span> <span class="token punctuation">{</span>                 
+		<span class="token keyword">struct</span> <span class="token class-name">Page</span> <span class="token operator">*</span>lh_first<span class="token punctuation">;</span> <span class="token comment">//first element</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment">//由LIST_HEAD(Page_list, Page);定义</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>一些宏</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#define PTE_ADDR(pte) (((u_long)(pte)) &amp; ~0xFFF)
+//获取页目录项对应的二级页表基地址，就是将页目录项内容的低12位抹零
+
+u_long page2ppn(struct Page *pp) {
+	return pp - pages;
+}// 给定物理页pp，返回pp是第几个页
+
+static inline u_long page2pa(struct Page *pp) {
+	return page2ppn(pp) &lt;&lt; PGSHIFT;
+}//给定物理页struct Page *pp，获取物理页pp的基地址：
+//先得到pp是第几个页，再乘上物理页大小
+    
+#define PPN(pa) (((u_long)(pa)) &gt;&gt; 12) //返回物理地址对应的页数
+
+static inline struct Page *pa2page(u_long pa) {
+	if (PPN(pa) &gt;= npage) {
+		panic("pa2page called with invalid pa: %x", pa);
+	}
+	return &amp;pages[PPN(pa)];
+} //给出某一页的pa，返回指向这个页的page指针
+
+static inline u_long page2kva(struct Page *pp) {
+	return KADDR(page2pa(pp));
+}//page转化为在kseg0的虚拟地址
+
+判定一个页目录项是否有效：
+if(( (*pgdir_entryp)  &amp; PTE_V ) == 0) //(无效)
+
+获取对应二级页表基地址：
+Pte *pgtable = (Pte*) KADDR(PTE_ADDR(*pgdir_entryp));
+PTE_ADDR(*pgdir_entryp)将页目录项低12位抹零，获得二级页表基地址pa，
+再用KADDR()转换为kseg0下的va
+
+由上二级页表基地址，获取对应页表项：
+Pte* pgtable_entry = pgtable + PTX(va);//PTX即获取0-1023的偏移量，是va的12-21位
+判断是否有效同上
+
+得到页表项内容：*pgtable_entry
+抹去低12位perm，获得pa(物理页基地址，高20位)
+pp = pa2page(*pgtable_entry);//不抹也行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="运行时二级页表检索pgdir-walk"><a href="#运行时二级页表检索pgdir-walk" class="headerlink" title="运行时二级页表检索pgdir_walk"></a>运行时二级页表检索<code>pgdir_walk</code></h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">pgdir_walk</span><span class="token punctuation">(</span>Pde <span class="token operator">*</span>pgdir<span class="token punctuation">,</span> u_long va<span class="token punctuation">,</span> <span class="token keyword">int</span> create<span class="token punctuation">,</span> Pte <span class="token operator">*</span><span class="token operator">*</span>ppte<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>pgdir_walk</code>能够获取<code>va</code>对应的二级页表项，该函数使<code>*ppte</code>指向<code>va</code>虚拟地址对应的二级页表项。支持为这个页目录项申请一个新的物理页作为其映射的二级页表。</p>
+<p>如果这个函数正常结束，就能赋给其相应参数指向二级页表项的指针（<code>pgtable</code> + <code>PTX(va)</code>）。</p>
+<h4 id="增加地址映射-page-insert"><a href="#增加地址映射-page-insert" class="headerlink" title="增加地址映射 page_insert"></a>增加地址映射 <code>page_insert</code></h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">page_insert</span><span class="token punctuation">(</span>Pde <span class="token operator">*</span>pgdir<span class="token punctuation">,</span> u_int asid<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">Page</span> <span class="token operator">*</span>pp<span class="token punctuation">,</span> u_long va<span class="token punctuation">,</span> u_int perm<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>增加地址映射，将va这一虚拟地址映射到内存控制块pp对应的物理页面。并将页表项权限更改为<code>perm</code></p>
+<p>首先<strong>使用<code>pgdir_walk</code>获得二级页表项</strong>。值得注意的是，此时我们不应当再去考虑<code>pgdir_walk</code>的实现细节，我们只需要可以通过其获得二级页表基地址即可，应当时刻注意抽象、封装和接口。</p>
+<p>然后分情况讨论：</p>
+<ul>
+<li>当该二级页表项有效时<ul>
+<li>若当前映射的物理页面不是我们需要其映射的pp，则执行<code>page_remove</code>取消地址映射。</li>
+<li>否则，更新权限位，并调用<code>tlb_invalidate</code>以使得下一次访问该va时会触发缺页异常并直接返回。</li>
+</ul>
+</li>
+<li>当二级页表项无效或进行了<code>page_remove</code>，调用<code>tlb_invalidate</code>使得下一次访问该va时触发缺页异常。调用<code>pgdir_walk</code>得到二级页表项，将其内容设置为pp对应的物理地址并或上权限位。还需要注意要使<code>pp-&gt;pp_ref++</code></li>
+</ul>
+<h4 id="page-lookup"><a href="#page-lookup" class="headerlink" title="page_lookup"></a><code>page_lookup</code></h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">Page</span> <span class="token operator">*</span><span class="token function">page_lookup</span><span class="token punctuation">(</span>Pde <span class="token operator">*</span>pgdir<span class="token punctuation">,</span> u_long va<span class="token punctuation">,</span> Pte <span class="token operator">*</span><span class="token operator">*</span>ppte<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>返回**<code>va</code>映射的物理页面的页控制块**，同时将 <code>ppte</code> 指向的空间设为对应的二级页表项地址。</p>
+<p>首先调用<code>pgdir_walk</code>获得<code>pte</code>，分情况讨论（值得注意的是，调用<code>pgdir_walk</code>的时候<code>create</code>置为<code>0</code>，即，如果页目录项非法，<strong>不</strong>新生成有效的二级页目录项）：</p>
+<ul>
+<li><code>pte</code>为0（无效）或<code>pte</code>判断<code>PTE_V</code>无效，直接返回0表示没找到</li>
+<li><code>pte</code>有效，根据<code>pte</code>得到物理页框的指针作为返回值，同时将参数<code>Pte **ppte</code>赋值使得<code>ppte</code>指向的<code>pte</code>的值更新为本函数中调用<code>pgdir_walk</code>得到的页目录项指针，一个小细节是要判断<code>ppte!=0</code>即<code>ppte</code>不是空指针</li>
+</ul>
+<h4 id="page-remove取消地址映射函数"><a href="#page-remove取消地址映射函数" class="headerlink" title="page_remove取消地址映射函数"></a><code>page_remove</code>取消地址映射函数</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">page_remove</span><span class="token punctuation">(</span>Pde <span class="token operator">*</span>pgdir<span class="token punctuation">,</span> u_int asid<span class="token punctuation">,</span> u_long va<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>取消地址映射函数，删除pgdir对应的两级页表结构中va这一虚拟地址对物理地址的映射，如果存在这样的映射，相应的物理页面引用次数会减少。</p>
+<p>利用上面的<code>page_lookup</code>函数找到va在pgdir下对应的物理页面，如果不为0（说明确实va映射到了物理地址）则使其<code>pp_ref</code>减1，如果减完之后为0，则说明不再有va映射到该物理页面，调用<code>page_free</code>将其插回<code>page_free_list</code>。将二级页表项内容设置为0，并调用<code>tlb_invalidate</code>使得再次访问该va时会引发缺页异常。</p>
+<h2 id="实验心得"><a href="#实验心得" class="headerlink" title="实验心得"></a>实验心得</h2><p>lab2的工作主要涉及两点：两级页表机制的实现，和TLB的维护。总的来说任务量相比前两次实验有所增加，在刚开始实验的时候对各种复杂的链表宏和指针理解起来非常困难，<del>边写边理解的过程好像也很折磨</del></p>
+<p>不过总的来说完成lab2让我对二级页表和tlb的具体实现有了基本的概念，也加深了我对指针的理解。通过实验也能和理论所学的东西结合起来，总之还是学到了很多东西。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/OS/">
+                                    <span class="chip bg-color">OS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/04/14/lab4-shi-yan-bao-gao/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/04/30/pkFTsUO.jpg" class="responsive-img" alt="OS_lab4">
+                        
+                        <span class="card-title">OS_lab4</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OS_lab4_report
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OS/">
+                        <span class="chip bg-color">OS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/03/20/oo-unit2/">
+                    <div class="card-image">
+                        
+                        <img src="https://s21.ax1x.com/2024/04/13/pFjqp8K.png" class="responsive-img" alt="OO_Unit2">
+                        
+                        <span class="card-title">OO_Unit2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BUAA_OO_Unit2_summary
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zxy
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OO/">
+                        <span class="chip bg-color">OO</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2024</span>
+            
+            <a href="/about" target="_blank">CozyM00n</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">29.9k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "2";
+                        var startDate = "2";
+                        var startHour = "17";
+                        var startMinute = "5";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/CozyM00n/CozyM00n.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1292769829@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1292769829" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1292769829" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="90" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
