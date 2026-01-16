@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="矩阵的LU分解概念矩阵的$LU$分解将 $n \times n$ 方阵分解成下三角矩阵 L 和上三角矩阵 U (Lower Triangular Matrix and Upper Triangular Matrix)，下面介绍的是Doolittle法。 直观理解相当于把高斯消元拆开保存，L 记录每一步消元用了多少倍，U 是“消完元之后剩下的上三角矩阵”，主元保存在U中。 LU分解的规范化Dooli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵的LU分解">
+<meta property="og:url" content="http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Hi there :D">
+<meta property="og:description" content="矩阵的LU分解概念矩阵的$LU$分解将 $n \times n$ 方阵分解成下三角矩阵 L 和上三角矩阵 U (Lower Triangular Matrix and Upper Triangular Matrix)，下面介绍的是Doolittle法。 直观理解相当于把高斯消元拆开保存，L 记录每一步消元用了多少倍，U 是“消完元之后剩下的上三角矩阵”，主元保存在U中。 LU分解的规范化Dooli">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/For_MD_%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/image-20260116234102430.png">
+<meta property="article:published_time" content="2026-01-16T16:46:55.994Z">
+<meta property="article:modified_time" content="2026-01-16T16:48:15.485Z">
+<meta property="article:author" content="little moon">
+<meta property="article:tag" content="线性代数">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/For_MD_%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/image-20260116234102430.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>矩阵的LU分解</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2026/01/06/C_lecture_8/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&text=矩阵的LU分解"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&is_video=false&description=矩阵的LU分解"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=矩阵的LU分解&body=Check out this article: http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&name=矩阵的LU分解&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&t=矩阵的LU分解"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84LU%E5%88%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">矩阵的LU分解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E8%A7%82%E7%90%86%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">直观理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LU%E5%88%86%E8%A7%A3%E7%9A%84%E8%A7%84%E8%8C%83%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text">LU分解的规范化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Doolittle%E6%B3%95%E8%BF%9B%E8%A1%8CLU%E5%88%86%E8%A7%A3"><span class="toc-number">1.4.</span> <span class="toc-text">使用Doolittle法进行LU分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.5.</span> <span class="toc-text">计算顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.6.</span> <span class="toc-text">举例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC1%E8%A1%8C-%E7%AC%AC1%E5%88%97"><span class="toc-number">1.6.1.</span> <span class="toc-text">第1行 &amp; 第1列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC2%E8%A1%8C-%E7%AC%AC2%E5%88%97"><span class="toc-number">1.6.2.</span> <span class="toc-text">第2行 &amp; 第2列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC3%E8%A1%8C-%E7%AC%AC3%E5%88%97"><span class="toc-number">1.6.3.</span> <span class="toc-text">第3行 &amp; 第3列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC4%E8%A1%8C-%E7%AC%AC4%E5%88%97"><span class="toc-number">1.6.4.</span> <span class="toc-text">第4行 &amp; 第4列</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        矩阵的LU分解
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">orange bear</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-01-16T16:46:55.994Z" class="dt-published" itemprop="datePublished">2026-01-17</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="矩阵的LU分解"><a href="#矩阵的LU分解" class="headerlink" title="矩阵的LU分解"></a>矩阵的LU分解</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>矩阵的$LU$分解将 $n \times n$ 方阵分解成下三角矩阵 L 和上三角矩阵 U (Lower Triangular Matrix and Upper Triangular Matrix)，下面介绍的是Doolittle法。</p>
+<h3 id="直观理解"><a href="#直观理解" class="headerlink" title="直观理解"></a>直观理解</h3><p>相当于把高斯消元拆开保存，L 记录每一步消元用了多少倍，U 是“消完元之后剩下的上三角矩阵”，主元保存在U中。</p>
+<h3 id="LU分解的规范化"><a href="#LU分解的规范化" class="headerlink" title="LU分解的规范化"></a>LU分解的规范化</h3><p>Doolittle 法要求：下三角矩阵(L) 的对角线元素均为1，这样LU分解就是唯一的了。</p>
+<p>$$<br>L &#x3D; \left[ \begin{array}{c c c c} 1 &amp; 0 &amp; 0 &amp; 0 \ \backslash^ {<em>} &amp; 1 &amp; 0 &amp; 0 \ \backslash^ {</em>} &amp; \backslash^ {<em>} &amp; 1 &amp; 0 \ \backslash^ {</em>} &amp; \backslash^ {<em>} &amp; \backslash^ {</em>} &amp; 1 \end{array} \right], U &#x3D; \left[ \begin{array}{c c c c} \backslash^ {<em>} &amp; \backslash^ {</em>} &amp; \backslash^ {<em>} &amp; \backslash^ {</em>} \ 0 &amp; \backslash^ {<em>} &amp; \backslash^ {</em>} &amp; \backslash^ {<em>} \ 0 &amp; 0 &amp; \backslash^ {</em>} &amp; \backslash^ {<em>} \ 0 &amp; 0 &amp; 0 &amp; \backslash^ {</em>} \end{array} \right]<br>$$</p>
+<h3 id="使用Doolittle法进行LU分解"><a href="#使用Doolittle法进行LU分解" class="headerlink" title="使用Doolittle法进行LU分解"></a>使用Doolittle法进行LU分解</h3><ol>
+<li><p>首先 L 矩阵的对角线均为1，对角线上均为0，故需计算 $L_{ij} (i&gt;j)$，U 矩阵需计算 $U_{ij}(j≥ i)$</p>
+</li>
+<li><p>先看  $U_{ij}$  的公式  $(j\geq i)$<br>$$<br>U _ {i j} &#x3D; A _ {i j} - \sum_ {k &#x3D; 1} ^ {i - 1} L _ {i k} U _ {k j}, \quad j \geq i<br>$$</p>
+<p>如何得到呢？由矩阵乘法：<br>$$<br>A _ {i j} &#x3D; \sum_ {k &#x3D; 1} ^ {n} L _ {i k} U _ {k j}<br>$$<br>由于 k &gt; i 时有 $L_{ik} &#x3D; 0$ ，故上式可写为：<br>$$<br>A _ {i j} &#x3D; \sum_ {k &#x3D; 1} ^ {i} L _ {i k} U _ {k j} &#x3D; L _ {i 1} U _ {1 j} + L _ {i 2} U _ {2 j} + \dots + L _ {i, i - 1} U _ {i - 1, j} + L _ {i i} U _ {i j}<br>$$<br>Doolittle规定  $L_{ii} &#x3D; 1$，故有：<br>$$<br>U _ {i j} &#x3D; A _ {i j} - \sum_ {k &#x3D; 1} ^ {i - 1} L _ {i k} U _ {k j}<br>$$</p>
+</li>
+<li><p>同理，来看 $L_{ij}$  的公式  $(j &lt; i)$：<br>$$<br>L _ {i j} &#x3D; \frac {A _ {i j} - \sum_ {k &#x3D; 1} ^ {j - 1} L _ {i k} U _ {k j}}{U _ {j j}}, \quad j &lt;   i<br>$$</p>
+<p>如何得到呢？由于 k &gt; j 时有 $U_{kj} &#x3D; 0$，故 $j &lt; i$ 时有：</p>
+</li>
+</ol>
+<p>$$<br>   A _ {i j} &#x3D; \sum_ {k &#x3D; 1} ^ {j} L _ {i k} U _ {k j} &#x3D; L _ {i 1} U _ {1 j} + \dots + L _ {i, j - 1} U _ {j - 1, j} + L _ {i j} U _ {j j}<br>$$<br>   注意这里最后一项是  $L_{ij}U_{jj}$  ，$U_{jj}$ 不是1了，于是：<br>$$<br>   L _ {i j} &#x3D; \frac {A _ {i j} - \sum_ {k &#x3D; 1} ^ {j - 1} L _ {i k} U _ {k j}}{U _ {j j}}<br>$$</p>
+<h3 id="计算顺序"><a href="#计算顺序" class="headerlink" title="计算顺序"></a>计算顺序</h3><p>   可以看到 $Σ$ 求和号里面共有 $min(i, j) - 1$ 项，要计算 U 或者 L 的(i, j)元素，分子上都是$A_{ij}$ 减去 $A_{ij}$ 所在的行和列元素依次相乘。计算顺序如下：</p>
+<ol>
+<li><p>固定第  $i$  行</p>
+</li>
+<li><p>先算这一行的  $U_{i,j}$  (从  $j &#x3D; i$  到  $n$ )</p>
+</li>
+<li><p>再算这一列的  $L_{j,i}$  (从  $j &#x3D; i + 1$  到  $n$ )</p>
+</li>
+</ol>
+<p>   每一步用到的  $L$  和  $U$  都已经存在。</p>
+<img src="For_MD_%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/image-20260116234102430.png" alt="image-20260116234102430" style="zoom:50%;" />
+
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>算一个4x4的例子，选一个主元都不为0的矩阵：<br>$$<br>A &#x3D; \left[ \begin{array}{l l l l} 2 &amp; 1 &amp; 1 &amp; 0 \ 4 &amp; 3 &amp; 3 &amp; 1 \ 8 &amp; 7 &amp; 9 &amp; 5 \ 6 &amp; 7 &amp; 9 &amp; 8 \end{array} \right]<br>$$</p>
+<h4 id="第1行-第1列"><a href="#第1行-第1列" class="headerlink" title="第1行 &amp; 第1列"></a>第1行 &amp; 第1列</h4><ol start="0">
+<li><p>可以把 L 和 U 写到一起，将答案矩阵初始化为全0，最后对角线和上三角就是U，下三角就是L，计算过程中的L和U可以直接从答案矩阵里方便地读出。<br>$$<br>\left[ \begin{array}{c c c c} 0 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right]<br>$$</p>
+</li>
+<li><p>计算  $U_{1j}$，求和符号里的 $k$ 从 1 到 i - 1，没有东西可减：</p>
+</li>
+</ol>
+<p>$$<br>U _ {1 1} &#x3D; 2, \quad U _ {1 2} &#x3D; 1, \quad U _ {1 3} &#x3D; 1, \quad U _ {1 4} &#x3D; 0<br>$$</p>
+<p>$$<br>\left[ \begin{array}{c c c c} 2 &amp; 1 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 0 &amp; 0 \end{array} \right]<br>$$</p>
+<ol start="2">
+<li>计算  $L_{i1}$：<br>$$<br>\begin{array}{l} L _ {2 1} &#x3D; \frac {4}{2} &#x3D; 2, \quad L _ {3 1} &#x3D; \frac {8}{2} &#x3D; 4, \quad L _ {4 1} &#x3D; \frac {6}{2} &#x3D; 3 \    \left[ \begin{array}{l l l l} 2 &amp; 1 &amp; 1 &amp; 0 \ 2 &amp; 0 &amp; 0 &amp; 0 \ 4 &amp; 0 &amp; 0 &amp; 0 \ 3 &amp; 0 &amp; 0 &amp; 0 \end{array} \right] \ \end{array}<br>$$</li>
+</ol>
+<h4 id="第2行-第2列"><a href="#第2行-第2列" class="headerlink" title="第2行 &amp; 第2列"></a>第2行 &amp; 第2列</h4><p>计算  $U_{2j}$</p>
+<p>$$<br>U _ {2 2} &#x3D; A_{2 2} - L_{2 1}  \times U_{12} &#x3D; 3 - 2 \times 1 &#x3D; 1<br>$$</p>
+<p>$$<br>U _ {2 3} &#x3D;A_{2 3} - L_{2 1}  \times U_{13} &#x3D; 3 - 2 \times 1 &#x3D; 1<br>$$</p>
+<p>$$<br>U _ {2 4} &#x3D;A_{2 4} - L_{2 1}  \times U_{14} &#x3D; 1 - 2 \times 0 &#x3D; 1<br>$$</p>
+<p>$$<br>\left[ \begin{array}{c c c c} 2 &amp; 1 &amp; 1 &amp; 0 \ 2 &amp; 1 &amp; 1 &amp; 1 \ 4 &amp; 0 &amp; 0 &amp; 0 \ 3 &amp; 0 &amp; 0 &amp; 0 \end{array} \right]<br>$$</p>
+<p>计算  $L_{i2}$</p>
+<p>$$<br>L _ {3 2} &#x3D; \frac {7 - 4 \times 1}{1} &#x3D; 3, \quad L _ {4 2} &#x3D; \frac {7 - 3 \times 1}{1} &#x3D; 4<br>$$</p>
+<p>$$<br>\left[ \begin{array}{c c c c} 2 &amp; 1 &amp; 1 &amp; 0 \ 2 &amp; 1 &amp; 1 &amp; 1 \ 4 &amp; 3 &amp; 0 &amp; 0 \ 3 &amp; 4 &amp; 0 &amp; 0 \end{array} \right]<br>$$</p>
+<h4 id="第3行-第3列"><a href="#第3行-第3列" class="headerlink" title="第3行 &amp; 第3列"></a>第3行 &amp; 第3列</h4><p>计算  $U_{3j}$</p>
+<p>$$<br>U _ {3 4} &#x3D; 5 - (4 \times 0 + 3 \times 1) &#x3D; 2,\space\space  U _ {3 3} &#x3D; 9 - (4 \times 1 + 3 \times 1) &#x3D; 2<br>$$</p>
+<p>计算  $L_{43}$</p>
+<p>$$<br>L _ {4 3} &#x3D; \frac {A_{43} - (L_{41} \times U_{13} + L_{42} \times U_{23})}{2}&#x3D;\frac {9 - (3 \times 1 + 4 \times 1)}{2} &#x3D; 1<br>$$</p>
+<p>$$<br>\left[ \begin{array}{c c c c} 2 &amp; 1 &amp; 1 &amp; 0 \ 2 &amp; 1 &amp; 1 &amp; 1 \ 4 &amp; 3 &amp; 2 &amp; 2 \ 3 &amp; 4 &amp; 1 &amp; 0 \end{array} \right]<br>$$</p>
+<h4 id="第4行-第4列"><a href="#第4行-第4列" class="headerlink" title="第4行 &amp; 第4列"></a>第4行 &amp; 第4列</h4><p>$$<br>U _ {4 4} &#x3D; 8 - (3 \times 0 + 4 \times 1 + 1 \times 2) &#x3D; 2<br>$$</p>
+<p>最终结果：<br>$$<br> {L &#x3D; \left[ \begin{array}{c c c c} 1 &amp; 0 &amp; 0 &amp; 0 \ 2 &amp; 1 &amp; 0 &amp; 0 \ 4 &amp; 3 &amp; 1 &amp; 0 \ 3 &amp; 4 &amp; 1 &amp; 1 \end{array} \right], U &#x3D; \left[ \begin{array}{c c c c} 2 &amp; 1 &amp; 1 &amp; 0 \ 0 &amp; 1 &amp; 1 &amp; 1 \ 0 &amp; 0 &amp; 2 &amp; 2 \ 0 &amp; 0 &amp; 0 &amp; 2 \end{array} \right]}<br>$$<br>观察可得，每一列的 $L$ 记录了用主元消下去的倍数，$U$ 是消元的结果。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84LU%E5%88%86%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">矩阵的LU分解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E8%A7%82%E7%90%86%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">直观理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LU%E5%88%86%E8%A7%A3%E7%9A%84%E8%A7%84%E8%8C%83%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text">LU分解的规范化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Doolittle%E6%B3%95%E8%BF%9B%E8%A1%8CLU%E5%88%86%E8%A7%A3"><span class="toc-number">1.4.</span> <span class="toc-text">使用Doolittle法进行LU分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.5.</span> <span class="toc-text">计算顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.6.</span> <span class="toc-text">举例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC1%E8%A1%8C-%E7%AC%AC1%E5%88%97"><span class="toc-number">1.6.1.</span> <span class="toc-text">第1行 &amp; 第1列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC2%E8%A1%8C-%E7%AC%AC2%E5%88%97"><span class="toc-number">1.6.2.</span> <span class="toc-text">第2行 &amp; 第2列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC3%E8%A1%8C-%E7%AC%AC3%E5%88%97"><span class="toc-number">1.6.3.</span> <span class="toc-text">第3行 &amp; 第3列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC4%E8%A1%8C-%E7%AC%AC4%E5%88%97"><span class="toc-number">1.6.4.</span> <span class="toc-text">第4行 &amp; 第4列</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&text=矩阵的LU分解"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&is_video=false&description=矩阵的LU分解"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=矩阵的LU分解&body=Check out this article: http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&title=矩阵的LU分解"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&name=矩阵的LU分解&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cozym00n.github.io/2026/01/17/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/&t=矩阵的LU分解"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2026
+    little moon
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
